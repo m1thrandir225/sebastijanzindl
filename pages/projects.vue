@@ -28,6 +28,17 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
+
+useHead({
+    title: 'Sebastijan Zindl - Projects',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: 'Sebastijan Zindl - Projects',
+        },
+    ],
+})
 const projects = ref([])
 </script>
 

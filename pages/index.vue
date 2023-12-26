@@ -124,6 +124,17 @@
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
 
+useHead({
+    title: 'Sebastijan Zindl',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: "Sebastijan Zindl's portfolio",
+        },
+    ],
+})
+
 const showInProgress = ref(false)
 
 const toggle = () => {
