@@ -29,6 +29,8 @@
     "dependencies": {
         "@nuxt/image": "^1.0.0",
         "@nuxtjs/sanity": "^1.8.3",
+        "@vercel/analytics": "^1.1.1",
+        "@vercel/speed-insights": "^1.0.2",
         "@vueuse/motion": "^2.0.0",
         "lucide-vue-next": "^0.299.0"
     }
