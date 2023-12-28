@@ -13,10 +13,14 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxt/image',
         '@vueuse/motion/nuxt',
+        '@nuxtjs/sanity',
     ],
     colorMode: {
         classSuffix: '',
         preference: 'dark',
+    },
+    sanity: {
+        projectId: 'ptgttce5',
     },
     runtimeConfig: {
         public: {

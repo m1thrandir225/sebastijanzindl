@@ -1,9 +1,9 @@
 <template>
     <div
-        class="relative z-50 flex flex-col justify-center w-full h-full max-w-screen-lg p-8 mx-auto transition-colors duration-200 ease-in-out rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100 dark:bg-neutral-800"
+        class="relative z-50 flex flex-col justify-center w-full h-full max-w-screen-lg p-8 mx-auto transition-colors duration-200 ease-in-out rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800"
     >
         <div
-            v-if="projects.length === 0"
+            v-if="projects?.length === 0 || !projects"
             class="flex items-center self-center justify-center gap-4"
         >
             <LucideIcon
@@ -18,17 +18,22 @@
             </p>
         </div>
 
-        <div v-else>
-            <div
-                class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-            ></div>
+        <div
+            v-else
+            class="flex flex-col items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[90%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-thumb-neutral-900 scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20"
+        >
+            <ProjectOverview
+                v-for="project in projects"
+                :key="project._id"
+                :project="project"
+            />
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
-
+import type { Project } from '~/types/project'
 useHead({
     title: 'Sebastijan Zindl - Projects',
     meta: [
@@ -39,7 +44,16 @@ useHead({
         },
     ],
 })
-const projects = ref([])
+
+const query = groq`*[_type == "project"] {
+  ...,
+  tecnologies[] -> {
+    ...,
+    name
+  }
+}`
+
+const { data: projects } = useSanityQuery<Project[]>(query)
 </script>
 
 <style></style>

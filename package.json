@@ -21,12 +21,14 @@
         "eslint-plugin-prettier": "^5.0.1",
         "nuxt": "^3.8.1",
         "prettier": "^3.1.0",
+        "tailwind-scrollbar": "^3.0.5",
         "typescript": "^5.2.2",
         "vue": "^3.3.8",
         "vue-router": "^4.2.5"
     },
     "dependencies": {
         "@nuxt/image": "^1.0.0",
+        "@nuxtjs/sanity": "^1.8.3",
         "@vueuse/motion": "^2.0.0",
         "lucide-vue-next": "^0.299.0"
     }
