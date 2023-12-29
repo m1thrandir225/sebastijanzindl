@@ -51,7 +51,7 @@
                 <p
                     v-for="tecnology in project.tecnologies"
                     :key="tecnology._id"
-                    class="font-sans text-lg italic underline transition-all duration-150 ease-in-out cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-red-400 decoration-wavy hover:underline-offset-4"
+                    class="font-sans text-lg italic underline transition-all duration-150 ease-in-out cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
                     :class="
                         decorationColors[
                             Math.floor(Math.random() * decorationColors.length)
