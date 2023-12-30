@@ -15,6 +15,7 @@
         "@nuxtjs/eslint-config-typescript": "^12.1.0",
         "@nuxtjs/eslint-module": "^4.1.0",
         "@nuxtjs/tailwindcss": "^6.9.5",
+        "@sanity/types": "^3.23.4",
         "@typescript-eslint/parser": "^6.11.0",
         "eslint": "^8.54.0",
         "eslint-config-prettier": "^9.0.0",
@@ -29,6 +30,7 @@
     "dependencies": {
         "@nuxt/image": "^1.0.0",
         "@nuxtjs/sanity": "^1.8.3",
+        "@portabletext/vue": "^1.0.6",
         "@vercel/analytics": "^1.1.1",
         "@vercel/speed-insights": "^1.0.2",
         "@vueuse/motion": "^2.0.0",

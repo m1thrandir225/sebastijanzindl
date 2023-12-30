@@ -24,6 +24,10 @@ const navLinks = [
         to: '/projects',
         text: 'Projects',
     },
+    {
+        to: '/blog/',
+        text: 'Blog',
+    },
 ]
 </script>
 
