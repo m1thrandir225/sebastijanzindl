@@ -3,7 +3,9 @@
         v-if="status !== 'pending'"
         class="gap-4 flex flex-col justify-start w-full h-full p-8 mx-auto transition-colors duration-200 ease-in-out rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800 overflow-y-auto md:max-h-[90%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-thumb-neutral-900 scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar dark:scrollbar-track-neutral-700/20"
     >
-        <div class="flex flex-row items-center justify-between w-full">
+        <div
+            class="flex flex-col items-center justify-between w-full md:flex-row"
+        >
             <h1
                 class="font-sans text-xl font-bold text-neutral-900 dark:text-neutral-100"
             >
