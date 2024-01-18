@@ -35,31 +35,31 @@
             <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
                 Currently learning:
                 <span
+                    v-for="learning in customPropertiesHome?.currentlyLearning"
+                    :key="learning"
                     class="mr-2 underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400"
-                    >Swift,</span
-                >
-                <span
-                    class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400"
-                    >Go</span
+                    >{{ learning }}</span
                 >
             </p>
 
             <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
-                Curently side project:
+                Current side project:
                 <NuxtLink
-                    class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-purple-400"
-                    to="https://github.com/m1thrandir225/AoC2023"
+                    v-for="workingOn in customPropertiesHome?.currentlyWorkingOn"
+                    :key="workingOn._key"
+                    :to="workingOn.currentlyWorkingOnItemLink"
                     target="_blank"
-                    >Advent of Code 2023
-                </NuxtLink>
+                    class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-pink-400"
+                    >{{ workingOn.currentlyWorkingOnItem }}</NuxtLink
+                >
             </p>
         </div>
 
         <div class="my-4">
             <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
                 I am a software engineer with a passion for building things.
-                Currently, I am working at Piksel as a full-stack developer. I
-                am also a student at the Faculty of Computer Science and
+                Currently, I am working at Piksel as a web/mobile engineer. I am
+                also a student at the Faculty of Computer Science and
                 Engineering in Skopje, Macedonia.
             </p>
         </div>
@@ -76,18 +76,20 @@
             </p>
             <div class="flex flex-row flex-wrap w-full gap-2 my-2">
                 <NuxtLink
-                    to="https://github.com/m1thrandir225"
+                    v-for="link in customPropertiesHome?.socialLinks"
+                    :key="link._key"
+                    :to="link.url"
                     target="_blank"
                     class="flex flex-row items-center gap-2 group text-neutral-900 dark:text-neutral-100"
                 >
                     <LucideIcon
-                        name="Github"
+                        :name="link.lucideIcon"
                         class="text-neutral-900 dark:text-neutral-100"
                         :size="24"
                     />
                     <span
                         class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 group-hover:decoration-blue-400"
-                        >Github</span
+                        >{{ link.title }}</span
                     >
                 </NuxtLink>
             </div>
@@ -123,6 +125,12 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
+import type { CustomPropertiesHome } from '~/types/customPropertiesHome'
+
+const query = groq`*[_type == "home"][0]`
+
+const { data: customPropertiesHome } =
+    useSanityQuery<CustomPropertiesHome>(query)
 
 useHead({
     title: 'Sebastijan Zindl',
@@ -130,7 +138,7 @@ useHead({
         {
             hid: 'description',
             name: 'description',
-            content: "Sebastijan Zindl's portfolio",
+            content: "Sebastijan Zindl's den",
         },
     ],
 })
