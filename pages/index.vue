@@ -1,5 +1,5 @@
 <template>
-    <div class="relative z-50 flex flex-col w-full h-full gap-4">
+    <div class="flex flex-col w-full h-full gap-4">
         <div
             class="relative z-[150] w-full h-auto p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 rounded-lg lg:max-w-screen-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100 hover:border-neutral-200 dark:hover:border-neutral-700 dark:bg-neutral-800"
         >
@@ -118,10 +118,6 @@
                 class="absolute z-40 top-[200px] left-[50%] bg-purple-400/50 rounded-full w-96 h-96 mix-blend-multiply dark:mix-blend-soft-light blur-3xl filter animate-zoom-left animation-delay-5000"
             />
 
-            <!-- <div
-            class="absolute top-[100px] left-[50%] bg-green-400/50 rounded-full w-64 h-64 mix-blend-multiply dark:mix-blend-soft-light blur-3xl filter animate-zoom-left"
-        /> -->
-
             <div
                 class="absolute z-40 top-[100px] left-[34%] bg-blue-400/50 rounded-full w-72 h-72 mix-blend-multiply dark:mix-blend-soft-light blur-3xl filter animate-zoom-left"
             />
@@ -135,7 +131,7 @@
             />
         </div>
         <div
-            class="relative z-50 flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 rounded-lg lg:max-w-screen-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100 hover:border-neutral-200 dark:hover:border-neutral-700 dark:bg-neutral-800"
+            class="relative z-[150] flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 rounded-lg lg:max-w-screen-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100 hover:border-neutral-200 dark:hover:border-neutral-700 dark:bg-neutral-800"
         >
             <h1
                 class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100"
