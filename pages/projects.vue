@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative z-50 flex flex-col justify-center w-full h-full p-8 mx-auto transition-colors duration-200 ease-in-out rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800"
+        class="relative z-50 flex flex-col justify-center w-full h-full p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800"
     >
         <div v-if="status === 'pending'" class="self-center">
             <LucideIcon
