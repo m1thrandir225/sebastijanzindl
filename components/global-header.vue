@@ -16,7 +16,7 @@
 const colorMode = useColorMode()
 
 const preference = computed(() =>
-    colorMode.preference === 'dark' ? 'dark' : 'light',
+    colorMode.value === 'dark' ? 'dark' : 'light',
 )
 
 const navLinks = [

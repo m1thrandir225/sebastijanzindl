@@ -3,7 +3,7 @@
         class="flex items-center justify-center p-2 transition-colors duration-200 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
     >
         <button
-            v-show="colorMode.preference === 'dark'"
+            v-show="colorMode.value === 'dark'"
             :size="24"
             color="blue"
             class="text-white"
@@ -13,7 +13,7 @@
         </button>
 
         <button
-            v-show="colorMode.preference === 'light'"
+            v-show="colorMode.value === 'light'"
             :size="24"
             color="blue"
             @click="toggleTheme"
@@ -28,6 +28,6 @@ import LucideIcon from './lucide-icon.vue'
 
 const colorMode = useColorMode()
 const toggleTheme = () => {
-    colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
+    colorMode.value = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 </script>

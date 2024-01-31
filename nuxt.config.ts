@@ -10,6 +10,12 @@ export default defineNuxtConfig({
             },
         },
     },
+    routeRules: {
+        '/': { prerender: true, isr: true },
+        '/blog': { prerender: true },
+        '/posts/**': { isr: true, prerender: true },
+        '/projects': { isr: true },
+    },
     modules: [
         '@nuxtjs/eslint-module',
         '@nuxtjs/tailwindcss',
