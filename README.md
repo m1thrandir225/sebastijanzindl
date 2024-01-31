@@ -1,10 +1,15 @@
-# Sebastijan Zindl Portfolio
+[![Repository Image](./.github/readme-header.png)](https://sebastijanzindl.me)
 
-Hi, this is the repository for my [ portfolio website](https://sebastijanzindl.me).
+### Description
 
-It is built with:
+My personal website, built to try out Nuxt 3. Hope you like it !
+
+Live link: [sebastijanzindl.me](https://sebastijanzindl.me)
+
+### Technologies used:
 
 -   Typescript
 -   Nuxt 3
 -   Tailwind CSS
+-   Sanity (CMS)
 -   Vercel (hosting)
