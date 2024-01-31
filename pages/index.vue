@@ -197,6 +197,17 @@ useHead({
     ],
 })
 
+useSeoMeta({
+    title: 'Sebastijan Zindl',
+    description: 'Engineer in progress',
+    ogSiteName: 'Sebastijan Zindl',
+    ogTitle: 'Sebastijan Zindl',
+    ogDescription: 'Engineer in progress',
+    ogImage:
+        'https://media.licdn.com/dms/image/C4D03AQErid4ScMfwFA/profile-displayphoto-shrink_200_200/0/1663787571765?e=1712188800&v=beta&t=-UkF775zenXbBcEJWgityd5G6i1VOU-B4_h1eZ9Z-I4',
+    ogUrl: 'https://sebastijanzindl.me',
+})
+
 const showInProgress = ref(false)
 
 const toggle = () => {
