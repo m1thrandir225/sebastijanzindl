@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "@nuxt/image": "^1.0.0",
+        "@nuxtjs/robots": "^3.0.0",
         "@nuxtjs/sanity": "^1.8.3",
         "@portabletext/vue": "^1.0.6",
         "@vercel/analytics": "^1.1.1",

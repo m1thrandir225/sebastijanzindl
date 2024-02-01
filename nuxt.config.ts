@@ -23,6 +23,7 @@ export default defineNuxtConfig({
         '@nuxt/image',
         '@vueuse/motion/nuxt',
         '@nuxtjs/sanity',
+        '@nuxtjs/robots',
     ],
     colorMode: {
         classSuffix: '',

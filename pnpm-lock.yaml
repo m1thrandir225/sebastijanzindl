@@ -8,6 +8,9 @@ dependencies:
   '@nuxt/image':
     specifier: ^1.0.0
     version: 1.0.0
+  '@nuxtjs/robots':
+    specifier: ^3.0.0
+    version: 3.0.0
   '@nuxtjs/sanity':
     specifier: ^1.8.3
     version: 1.8.3
@@ -1489,6 +1492,16 @@ packages:
       - vite
       - webpack
     dev: true
+
+  /@nuxtjs/robots@3.0.0:
+    resolution: {integrity: sha512-qsHGW1KXBvV5Kq7u3huPnFCUTbHS4Fk8Za2mNPgmUXcwLgp3exvhPtdZfIdjrCF/aZk3A8OZONNmGghs6CecBA==}
+    dependencies:
+      '@nuxt/kit': 3.8.1
+      h3: 1.8.2
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: false
 
   /@nuxtjs/sanity@1.8.3:
     resolution: {integrity: sha512-gXfiPT4ycHOcr4ruTSk98wCS6oN2JTVeLGenq5R5SQ9xwYSz28h7y2P56XjRGHdG8xDq6jEklHB9yvrlH6253g==}
