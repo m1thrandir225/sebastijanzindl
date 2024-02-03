@@ -21,4 +21,6 @@ import LucideIcon from './lucide-icon.vue'
 const isDark = useDark()
 
 const toggleTheme = useToggle(isDark)
+
+console.log(isDark.value)
 </script>
