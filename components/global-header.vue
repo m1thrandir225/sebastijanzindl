@@ -1,11 +1,7 @@
 <template>
     <div class="flex flex-row items-center justify-between w-full px-4 py-8">
         <NuxtLink to="/">
-            <GlobalLogo
-                :width="64"
-                :height="64"
-                :theme="isDark ? 'dark' : 'light'"
-            />
+            <GlobalLogo :width="64" :height="64" />
         </NuxtLink>
         <div class="flex flex-row items-center justify-between gap-4">
             <nav v-for="link in navLinks" :key="link.to">
@@ -17,10 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useDark } from '@vueuse/core'
-
-const isDark = useDark()
-
 const navLinks = [
     {
         to: '/projects',
