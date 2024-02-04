@@ -111,12 +111,6 @@
                 </div>
             </div>
 
-            <div class="my-4">
-                <p class="text-sm text-neutral-600">
-                    2023 - PRESENT © Sebastijan Zindl
-                </p>
-            </div>
-
             <div
                 class="hidden lg:block absolute z-40 top-[200px] left-[50%] bg-purple-400/50 rounded-full w-96 h-96 mix-blend-multiply dark:mix-blend-soft-light blur-3xl filter animate-zoom-left animation-delay-5000"
             />

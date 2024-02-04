@@ -3,7 +3,7 @@
         <NuxtLink to="/">
             <GlobalLogo :width="64" :height="64" />
         </NuxtLink>
-        <div class="flex flex-row items-center justify-between gap-4">
+        <div class="flex flex-row items-center justify-between sm:gap-4">
             <nav v-for="link in navLinks" :key="link.to">
                 <NavElement :to="link.to" :text="link.text" />
             </nav>

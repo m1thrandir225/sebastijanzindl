@@ -4,8 +4,11 @@
     >
         <div class="container relative mx-auto">
             <GlobalHeader />
+
             <slot />
+            <GlobalFooter />
         </div>
+
         <SpeedInsights />
     </div>
 </template>
