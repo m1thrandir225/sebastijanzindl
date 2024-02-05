@@ -101,5 +101,6 @@ const query = groq`*[_type == "project"] {
   }
 }`
 
+
 const { data: projects, status } = useSanityQuery<Project[]>(query)
 </script>
