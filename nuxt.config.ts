@@ -17,6 +17,7 @@ export default defineNuxtConfig({
         '/projects': { isr: true },
     },
     modules: [
+        'floating-vue/nuxt',
         '@nuxtjs/eslint-module',
         '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',

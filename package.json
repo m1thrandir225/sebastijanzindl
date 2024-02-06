@@ -37,6 +37,7 @@
         "@vueuse/components": "^10.7.2",
         "@vueuse/core": "^10.7.2",
         "@vueuse/motion": "^2.0.0",
+        "floating-vue": "^5.2.2",
         "lucide-vue-next": "^0.299.0"
     }
 }

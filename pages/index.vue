@@ -138,18 +138,24 @@
             <div
                 class="flex flex-row flex-wrap items-start gap-2 relative z-[150]"
             >
-                <div
+                <VTooltip
                     v-for="tool in customPropertiesHome?.using"
                     :key="tool._key"
-                    class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20"
                 >
-                    <SanityImage
-                        :image="tool.logo"
-                        :asset-id="tool.logo.asset._ref"
-                        class="w-10 h-10"
-                        alt="tool.name"
-                    />
-                </div>
+                    <template #popper>
+                        {{ tool.name }}
+                    </template>
+                    <div
+                        class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20"
+                    >
+                        <SanityImage
+                            :image="tool.logo"
+                            :asset-id="tool.logo.asset._ref"
+                            class="w-10 h-10"
+                            alt="tool.name"
+                        />
+                    </div>
+                </VTooltip>
             </div>
         </div>
 
