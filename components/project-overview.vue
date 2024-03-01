@@ -1,20 +1,17 @@
 <template>
     <div
-        class="flex flex-col items-start w-full gap-4 p-4 rounded-md bg-neutral-100 dark:bg-neutral-800"
+        class="flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] h-full"
     >
+        <SanityImage
+            :asset-id="project.mainImage.asset._ref"
+            :ref_for="project.mainImage.asset._ref"
+            auto="format"
+            class="object-contain w-full h-auto rounded-t-lg max-h-[200px]"
+        />
         <div
-            class="flex flex-col items-start justify-between w-full gap-4 md:items-center md:flex-row"
+            class="flex flex-col items-start justify-between w-full gap-4 p-4 md:items-center md:flex-row"
         >
             <div class="flex flex-row items-center gap-4">
-                <SanityImage
-                    :asset-id="project.mainImage.asset._ref"
-                    max-h="48px"
-                    max-w="48px"
-                    min-h="48px"
-                    min-w="48px"
-                    auto="format"
-                    w="48"
-                />
                 <p
                     class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100"
                 >
@@ -23,13 +20,16 @@
             </div>
             <div class="flex flex-row gap-4">
                 <NuxtLink
+                    v-if="project.githubLink"
                     :to="project.githubLink"
                     target="_blank"
                     class="text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300"
                 >
                     <LucideIcon name="Github" :size="24" />
                 </NuxtLink>
+
                 <NuxtLink
+                    v-if="project.liveLink"
                     :to="project.liveLink"
                     target="_blank"
                     class="text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300"
@@ -38,10 +38,10 @@
                 </NuxtLink>
             </div>
         </div>
-        <p class="font-sans text-neutral-900 dark:text-neutral-100">
+        <p class="p-4 font-sans text-neutral-900 dark:text-neutral-100">
             {{ project.description }}
         </p>
-        <div class="flex flex-col w-full gap-2">
+        <div class="flex flex-col w-full gap-2 p-4">
             <h1
                 class="font-sans text-xl font-semibold text-neutral-900 dark:text-neutral-100"
             >

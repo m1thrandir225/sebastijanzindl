@@ -13,7 +13,7 @@
             </p>
         </div>
         <div
-            class="relative z-50 flex flex-col justify-center w-full h-full p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800"
+            class="relative z-50 flex flex-col justify-center w-auto h-full p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800"
         >
             <div v-if="status === 'pending'" class="self-center">
                 <LucideIcon
@@ -42,7 +42,7 @@
                 v-else-if="
                     status === 'success' && projects && projects?.length > 0
                 "
-                class="flex flex-col items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20"
             >
                 <ProjectOverview
                     v-for="project in projects"
