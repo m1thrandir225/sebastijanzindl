@@ -136,7 +136,7 @@
                 Favorite tools:
             </h1>
             <div
-                class="flex flex-row flex-wrap items-start gap-2 relative z-[150]"
+                class="grid grid-cols-3 justify-center md:flex md:flex-row md:flex-wrap items-start gap-2 relative z-[150]"
             >
                 <VTooltip
                     v-for="tool in customPropertiesHome?.using"
@@ -146,12 +146,12 @@
                         {{ tool.name }}
                     </template>
                     <div
-                        class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20"
+                        class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center"
                     >
                         <SanityImage
                             :image="tool.logo"
                             :asset-id="tool.logo.asset._ref"
-                            class="w-10 h-10"
+                            class="self-center w-10 h-10"
                             alt="tool.name"
                         />
                     </div>
