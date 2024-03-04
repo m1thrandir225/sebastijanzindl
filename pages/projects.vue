@@ -1,6 +1,10 @@
 <template>
-    <div class="flex flex-col items-start w-full h-full gap-2 justift-start">
-        <div class="flex flex-col items-start gap-2 p-4 justift-start md:p-0">
+    <div
+        class="relative flex flex-col items-start w-full h-full gap-2 justift-start"
+    >
+        <div
+            class="relative flex flex-col items-start gap-2 p-4 justift-start md:p-0"
+        >
             <h1
                 class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
             >
@@ -42,7 +46,7 @@
                 v-else-if="
                     status === 'success' && projects && projects?.length > 0
                 "
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20"
+                class="relative z-50 grid py-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20"
             >
                 <ProjectOverview
                     v-for="project in projects"
