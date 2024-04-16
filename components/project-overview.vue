@@ -51,7 +51,7 @@
                 <p
                     v-for="tecnology in project.tecnologies"
                     :key="tecnology._id"
-                    class="font-sans text-lg italic underline transition-all duration-150 ease-in-out cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
+                    class="px-4 py-2 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer bg-slate-200 text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
                     :class="
                         decorationColors[
                             Math.floor(Math.random() * decorationColors.length)
@@ -74,13 +74,13 @@ const { project } = defineProps<{
 }>()
 
 const decorationColors = ref([
-    'decoration-red-400',
-    'decoration-orange-400',
-    'decoration-yellow-400',
-    'decoration-green-400',
-    'decoration-blue-400',
-    'decoration-purple-400',
-    'decoration-pink-400',
+    'bg-red-400 dark:bg-red-600',
+    'bg-orange-400 dark:bg-orange-600',
+    'bg-yellow-400 dark:bg-orange-600',
+    'bg-green-400 dark:bg-green-600',
+    'bg-blue-400 dark:bg-blue-600',
+    'bg-purple-400 dark:bg-purple-600',
+    'bg-pink-400 dark:bg-pink-600',
 ])
 </script>
 
