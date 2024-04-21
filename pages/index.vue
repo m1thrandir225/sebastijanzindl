@@ -70,9 +70,8 @@
                     class="font-sans text-lg text-neutral-900 dark:text-neutral-100"
                 >
                     I am a software engineer with a passion for building things.
-                    Currently, I am working at Piksel as a web/mobile engineer.
-                    I am also a student at the Faculty of Computer Science and
-                    Engineering in Skopje, Macedonia.
+                    Currently I'm focused on finishing my studies at the Faculty
+                    of Computer Science and Engineering in Skopje, Macedonia.
                 </p>
             </div>
             <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
