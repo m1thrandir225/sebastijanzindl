@@ -4,7 +4,7 @@
     >
         <SanityImage
             :asset-id="project.mainImage.asset._ref"
-            :ref_for="project.mainImage.asset._ref"
+            :ref_for="!!project.mainImage.asset._ref"
             auto="format"
             class="object-contain w-full h-auto rounded-t-lg max-h-[200px]"
         />

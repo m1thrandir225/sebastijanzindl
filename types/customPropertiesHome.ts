@@ -6,6 +6,8 @@ import {
 import type { SocialLink } from './socialLink'
 
 export interface CustomPropertiesHome {
+    aboutMeParagraph: string
+    hobbiesParagraph: string
     socialLinks: SocialLink[]
     currentlyLearning: string[]
     currentlyWorkingOn: {

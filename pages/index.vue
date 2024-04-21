@@ -29,17 +29,6 @@
                 <p
                     class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]"
                 >
-                    I am currently working at:
-                    <NuxtLink
-                        class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-pink-400"
-                        to="https://piksel.mk"
-                        target="_blank"
-                        >Piksel</NuxtLink
-                    >
-                </p>
-                <p
-                    class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]"
-                >
                     Currently learning:
                     <span
                         v-for="learning in customPropertiesHome?.currentlyLearning"
@@ -69,16 +58,11 @@
                 <p
                     class="font-sans text-lg text-neutral-900 dark:text-neutral-100"
                 >
-                    I am a software engineer with a passion for building things.
-                    Currently I'm focused on finishing my studies at the Faculty
-                    of Computer Science and Engineering in Skopje, Macedonia.
+                    {{ customPropertiesHome?.aboutMeParagraph }}
                 </p>
             </div>
             <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
-                Beyond my programming pursuits, I find joy in the realms of
-                video games, anime, philosophy, and history. Additionally, I
-                channel my passion into collecting mechanical keyboards and
-                proudly declare myself a devoted Gandalf enthusiast.
+                {{ customPropertiesHome?.hobbiesParagraph }}
             </p>
 
             <div class="my-4">
