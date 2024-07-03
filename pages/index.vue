@@ -133,7 +133,7 @@
                     >
                         <SanityImage
                             :image="tool.logo"
-                            :asset-id="tool.logo.asset._ref"
+                            :asset-id="tool.logo.asset._ref as string"
                             class="self-center w-10 h-10"
                             alt="tool.name"
                         />
