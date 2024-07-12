@@ -1,5 +1,7 @@
 <template>
-    <div class="flex flex-col items-start justify-start w-full h-full gap-2">
+    <div
+        class="flex flex-col items-start justify-start w-full h-full max-w-screen-xl gap-2 mx-auto"
+    >
         <div class="flex flex-col items-start justify-start gap-2 p-4 md:p-0">
             <h1
                 class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
@@ -50,5 +52,3 @@ const query = groq`*[_type == "post"]`
 
 const { data: posts } = useSanityQuery<Post[]>(query)
 </script>
-
-<style></style>

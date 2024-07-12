@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col w-full h-full gap-8 py-4 lg:gap-4">
         <div
-            class="relative z-[150] w-full h-auto p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 lg:rounded-lg lg:max-w-screen-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100/50 lg:bg-neutral-100 lg:hover:border-neutral-200 lg:dark:hover:border-neutral-700 dark:bg-neutral-800"
+            class="relative z-[150] w-full h-auto p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 lg:rounded-lg lg:max-w-screen-xl bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100/50 lg:bg-neutral-100 lg:hover:border-neutral-200 lg:dark:hover:border-neutral-700 dark:bg-neutral-800"
         >
             <h1
                 class="font-sans text-3xl font-bold text-neutral-900 dark:text-neutral-100"
@@ -111,7 +111,7 @@
             />
         </div>
         <div
-            class="relative z-[150] flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 lg:rounded-lg lg:max-w-screen-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-transparent lg:hover:border-neutral-200 lg:dark:hover:border-neutral-700 lg:dark:bg-neutral-800/20 dark:bg-neutral-800"
+            class="relative z-[150] flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 border-transparent border-opacity-50 lg:rounded-lg lg:max-w-screen-xl bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-transparent lg:hover:border-neutral-200 lg:dark:hover:border-neutral-700 lg:dark:bg-neutral-800/20 dark:bg-neutral-800"
         >
             <h1
                 class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100"

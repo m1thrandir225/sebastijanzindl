@@ -10,6 +10,7 @@ const isDark = useDark()
 
 <template>
     <svg
+        id="logo"
         :width="props.width"
         :height="props.height"
         viewBox="0 0 13 9"
@@ -29,3 +30,12 @@ const isDark = useDark()
         />
     </svg>
 </template>
+
+<style scoped>
+#logo > path {
+    transition: all ease-in-out 0.1s;
+}
+#logo:hover > path {
+    fill: #fbbf23;
+}
+</style>

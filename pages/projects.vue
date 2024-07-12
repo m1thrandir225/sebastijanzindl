@@ -1,9 +1,9 @@
 <template>
     <div
-        class="relative flex flex-col items-start w-full h-full gap-2 justift-start"
+        class="relative flex flex-col items-start w-full h-full max-w-screen-xl gap-4 mx-auto justift-start"
     >
         <div
-            class="relative flex flex-col items-start gap-2 p-4 justift-start md:p-0"
+            class="relative flex flex-col items-start w-full gap-2 p-4 text-start justift-start md:p-0"
         >
             <h1
                 class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
@@ -103,7 +103,7 @@ const query = groq`*[_type == "project"] {
     ...,
     name
   }
-}`
+} | order(_createdAt desc)`
 
 const { data: projects, status } = useSanityQuery<Project[]>(query)
 </script>

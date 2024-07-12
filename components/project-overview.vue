@@ -6,6 +6,7 @@
             :asset-id="project.mainImage.asset._ref"
             :ref_for="!!project.mainImage.asset._ref"
             auto="format"
+            height="200"
             class="object-contain w-full h-auto rounded-t-lg max-h-[200px]"
         />
         <div
@@ -13,7 +14,7 @@
         >
             <div class="flex flex-row items-center gap-4">
                 <p
-                    class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+                    class="font-sans text-[18px] font-bold text-neutral-900 dark:text-neutral-100"
                 >
                     {{ project.title }}
                 </p>
@@ -38,20 +39,22 @@
                 </NuxtLink>
             </div>
         </div>
-        <p class="p-4 font-sans text-neutral-900 dark:text-neutral-100">
+        <p
+            class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100"
+        >
             {{ project.description }}
         </p>
         <div class="flex flex-col w-full gap-2 p-4">
-            <h1
-                class="font-sans text-xl font-semibold text-neutral-900 dark:text-neutral-100"
+            <h3
+                class="font-sans font-semibold text-neutral-900 dark:text-neutral-100"
             >
                 Technologies:
-            </h1>
+            </h3>
             <div class="flex flex-row flex-wrap items-center gap-2">
                 <p
                     v-for="tecnology in project.tecnologies"
                     :key="tecnology._id"
-                    class="px-4 py-2 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
+                    class="px-4 text-[16px] py-1 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
                     :class="
                         decorationColors[
                             Math.floor(Math.random() * decorationColors.length)
