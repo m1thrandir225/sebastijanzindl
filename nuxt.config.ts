@@ -14,17 +14,17 @@ export default defineNuxtConfig({
     '/': { prerender: true, isr: 3600 },
     '/blog': { prerender: true, isr: 3600 },
     '/posts/**': { prerender: true, isr: 3600 },
-    '/projects': { prerender: true, isr: 3600 },
+    '/projects': { isr: 3600 },
   },
   modules: [
     'floating-vue/nuxt',
-    '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/motion/nuxt',
     '@nuxtjs/sanity',
     '@nuxtjs/robots',
+    "@nuxt/eslint"
   ],
   colorMode: {
     classSuffix: '',
