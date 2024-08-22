@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-3 w-full h-full gap-8 py-4 lg:gap-4">
     <div
-      class="relative z-[150] lg:col-span-2  w-full h-auto p-8 mx-auto transition-colors duration-200 ease-in-out border-2 dark:border-neutral-800 border-neutral-200 border-opacity-50 rounded-xl lg:max-w-screen-xl backdrop-blur-7xl bg-zinc-100/20 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50">
+      class="relative z-[150] max-w-[90%] md:max-w-full lg:col-span-2  w-full h-auto p-8 mx-auto transition-colors duration-200 ease-in-out border-2 dark:border-neutral-800 border-neutral-200 border-opacity-50 rounded-xl lg:max-w-screen-xl backdrop-blur-7xl bg-zinc-100/20 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50">
       <h1 class="font-sans text-3xl font-bold text-neutral-900 dark:text-neutral-100">
         Sebastijan Zindl
       </h1>
@@ -70,7 +70,7 @@ v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url
         class="hidden lg:block absolute z-40 bottom-[100px] right-[50%] bg-pink-400/50 rounded-full w-64 h-64 mix-blend-multiply dark:mix-blend-soft-light blur-3xl filter animate-zoom-right animation-delay-2000" />
     </div>
     <div
-      class="relative z-[150] flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 dark:border-neutral-800 border-neutral-200 border-opacity-50 rounded-xl max-w-full xl:max-w-screen-xl dark:bg-opacity-50 backdrop-blur-3xl bg-zinc-100/20 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50">
+      class="relative z-[150] max-w-[90%] md:max-w-full flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 dark:border-neutral-800 border-neutral-200 border-opacity-50 rounded-xl xl:max-w-screen-xl dark:bg-opacity-50 backdrop-blur-3xl bg-zinc-100/20 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50">
       <h1 class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100">
         Favorite tools:
       </h1>

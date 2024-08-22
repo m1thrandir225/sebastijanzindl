@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] h-full transform-gpu md:hover:-translate-y-4 z-[100] transition-transform ease-in-out duration-150 relative"
+        class="group flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] h-full transform-gpu hover:shadow-lg z-[100] ease-in-out duration-150 relative"
     >
         <SanityImage
             :asset-id="project.mainImage.asset._ref"

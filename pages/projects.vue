@@ -9,7 +9,7 @@
             </p>
         </div>
         <div
-            class="relative z-50 flex flex-col max-h-[600px] justify-center w-auto h-full p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800">
+            class="relativez-50 flex flex-col  max-h-[600px] justify-center w-auto h-full  px-0 py-8 md:p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-200 dark:bg-neutral-800">
             <div v-if="status === 'pending'" class="self-center">
                 <LucideIcon name="Loader2" class="animate-spin text-neutral-900 dark:text-neutral-200" :size="64" />
             </div>
@@ -20,8 +20,9 @@
                 </p>
             </div>
 
-            <div v-else-if="status === 'success' && projects && projects.length > 0"
-                class="relative z-50 grid py-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-neutral-400/20 dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-neutral-100 dark:scrollbar-track-neutral-700/20">
+            <div
+            v-else-if="status === 'success' && projects && projects.length > 0"
+                class="relative z-50 grid py-4 px-8 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400">
                 <ProjectOverview v-for="project in projects" :key="project._id" :project="project" />
             </div>
             <div v-else-if="status === 'success' && !projects" class="flex items-center self-center justify-center gap-4">
