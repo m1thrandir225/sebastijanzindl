@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     head: {
       charset: 'utf-8',
@@ -10,12 +11,14 @@ export default defineNuxtConfig({
       },
     },
   },
+
   routeRules: {
     '/': { prerender: true, isr: 3600 },
     '/blog': { prerender: true, isr: 3600 },
     '/posts/**': { prerender: true, isr: 3600 },
     '/projects': { isr: 3600 },
   },
+
   modules: [
     'floating-vue/nuxt',
     '@nuxtjs/tailwindcss',
@@ -26,13 +29,16 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     "@nuxt/eslint"
   ],
+
   colorMode: {
     classSuffix: '',
     preference: 'dark',
   },
+
   sanity: {
     projectId: 'ptgttce5',
   },
+
   runtimeConfig: {
     public: {
       motion: {
@@ -53,4 +59,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2024-09-05',
 })

@@ -19,15 +19,13 @@
       <div class="my-4">
         <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
           Currently learning:
-          <span
-v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
+          <span v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
             class="mr-2 underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400">{{
               learning }}</span>
         </p>
         <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
           Current side project:
-          <NuxtLink
-v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._key"
+          <NuxtLink v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._key"
             :to="workingOn.currentlyWorkingOnItemLink" target="_blank"
             class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-pink-400">
             {{ workingOn.currentlyWorkingOnItem }}</NuxtLink>
@@ -46,8 +44,7 @@ v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._k
           Find me on:
         </p>
         <div class="flex flex-col flex-wrap w-full gap-2 my-2 lg:flex-row">
-          <NuxtLink
-v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url" target="_blank"
+          <NuxtLink v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url" target="_blank"
             class="flex flex-row items-center gap-2 group text-neutral-900 dark:text-neutral-100">
             <LucideIcon :name="link.lucideIcon" class="text-neutral-900 dark:text-neutral-100" :size="24" />
             <span
@@ -81,9 +78,8 @@ v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url
           </template>
           <div
             class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center">
-            <SanityImage
-:image="tool.logo" :asset-id="tool.logo.asset._ref as string" class="self-center w-10 h-10"
-              alt="tool.name" />
+            <SanityImage :image="tool.logo" :asset-id="tool.logo.asset._ref as string" class="self-center w-10 h-10"
+              alt="" />
           </div>
         </VTooltip>
       </div>
