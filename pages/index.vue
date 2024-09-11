@@ -6,29 +6,8 @@
         Sebastijan Zindl
       </h1>
       <div class="my-4">
-        <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
-          Hi, I am Sebastijan Zindl, a software engineer
-          <span
-            class="underline relative z-[100] transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 hover:decoration-orange-400"
-            :class="{
-              'decoration-neutral-500': !showInProgress,
-              'decoration-green-400': showInProgress,
-            }" @click="toggle">{{ inProgressValue }}</span>.
-        </p>
-      </div>
-      <div class="my-4">
-        <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
-          Currently learning:
-          <span v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
-            class="mr-2 underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400">{{
-              learning }}</span>
-        </p>
-        <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
-          Current side project:
-          <NuxtLink v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._key"
-            :to="workingOn.currentlyWorkingOnItemLink" target="_blank"
-            class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-pink-400">
-            {{ workingOn.currentlyWorkingOnItem }}</NuxtLink>
+        <p class="italic text-md text-neutral-900 dark:text-neutral-100">
+          Software Engineer, currently focused on building and delivering engaging mobile experiences.
         </p>
       </div>
       <div class="my-4">
@@ -40,11 +19,32 @@
         {{ customPropertiesHome?.hobbiesParagraph }}
       </p>
       <div class="my-4">
+        <p
+          v-if="customPropertiesHome?.currentlyLearning"
+          class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
+          Currently learning:
+          <span
+            v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
+            class="mr-2 underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400">{{
+              learning }}</span>
+        </p>
+        <p v-if="customPropertiesHome?.currentlyWorkingOn" class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
+          Currently working on:
+          <NuxtLink
+v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._key"
+            :to="workingOn.currentlyWorkingOnItemLink" target="_blank"
+            class="underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-pink-400">
+            {{ workingOn.currentlyWorkingOnItem }}</NuxtLink>
+        </p>
+      </div>
+
+      <div class="my-4">
         <p class="font-sans text-lg text-neutral-900 dark:text-neutral-100">
           Find me on:
         </p>
         <div class="flex flex-col flex-wrap w-full gap-2 my-2 lg:flex-row">
-          <NuxtLink v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url" target="_blank"
+          <NuxtLink
+v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url" target="_blank"
             class="flex flex-row items-center gap-2 group text-neutral-900 dark:text-neutral-100">
             <LucideIcon :name="link.lucideIcon" class="text-neutral-900 dark:text-neutral-100" :size="24" />
             <span
@@ -78,7 +78,8 @@
           </template>
           <div
             class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center">
-            <SanityImage :image="tool.logo" :asset-id="tool.logo.asset._ref as string" class="self-center w-10 h-10"
+            <SanityImage
+:image="tool.logo" :asset-id="tool.logo.asset._ref as string" class="self-center w-10 h-10"
               alt="" />
           </div>
         </VTooltip>
@@ -130,15 +131,6 @@ useSeoMeta({
   ogUrl: 'https://sebastijanzindl.me',
 })
 
-const showInProgress = ref(false)
-
-const toggle = () => {
-  showInProgress.value = !showInProgress.value
-}
-
-const inProgressValue = computed(() => {
-  return !showInProgress.value ? '(in progress)' : '(still in school 😕)'
-})
 </script>
 
 <style scoped lang="css">
