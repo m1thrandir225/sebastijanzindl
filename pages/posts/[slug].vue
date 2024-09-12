@@ -6,11 +6,37 @@
         <div
             class="flex flex-col items-start justify-between w-full md:items-center md:flex-row"
         >
-            <h1 class="font-sans text-2xl text-[#fbbf23] font-bold">
+            <h1
+                v-motion
+                :initial="{
+                    opacity: 0,
+                    y: -50,
+                }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        delay: 0,
+                    },
+                }"
+                class="font-sans text-2xl text-[#fbbf23] font-bold"
+            >
                 {{ post?.title }}
             </h1>
             <span
                 v-if="post?.publishedAt"
+                v-motion
+                :initial="{
+                    opacity: 0,
+                    y: -50,
+                }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        delay: 200,
+                    },
+                }"
                 class="text-md md:text-lg text-neutral-900 dark:text-neutral-100"
             >
                 Published on:
