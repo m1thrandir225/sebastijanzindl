@@ -3,7 +3,7 @@ import {
   type ImageMetadata,
   type ImagePalette,
 } from "@sanity/types";
-import type { SocialLink } from "./socialLink";
+import type { SocialLink } from "./content/socialLink";
 
 export interface CustomPropertiesHome {
   aboutMeParagraph: string;

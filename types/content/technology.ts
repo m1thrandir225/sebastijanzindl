@@ -1,4 +1,4 @@
-import type { CustomImageSanity } from '~/types/custom-image'
+import type { CustomImageSanity } from '~/types/components/custom-image'
 
 export type Technology = {
     _id: string

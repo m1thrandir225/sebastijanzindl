@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-col items-start justify-start w-full h-full max-w-screen-xl gap-2 mx-auto">
+    <div v-if="pageStatus == 'success' && blogPage" class="flex flex-col items-start justify-start w-full h-full max-w-screen-xl gap-2 mx-auto">
         <div class="flex flex-col items-start justify-start gap-2 p-4 md:p-0">
             <h1 class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800">
-                Blog
+                {{blogPage.title}}
             </h1>
             <p class="font-sans text-lg font-medium dark:text-neutral-100 text-neutral-800">
-                Hopefully this will be a thriving blog some day.
+              {{blogPage.subtitle}}
             </p>
         </div>
         <div
@@ -16,28 +16,21 @@
 </template>
 
 <script setup lang="ts">
-import type { Post } from '~/types/post'
-
-useHead({
-    title: 'Sebastijan Zindl - Blog',
-    meta: [
-        {
-            name: 'description',
-            content: "Maybe I'll write something here, maybe not.",
-        },
-    ],
-})
-
-useSeoMeta({
-    title: 'Sebastijan Zindl - Blog',
-    description: "My Personal Blog",
-    ogTitle: 'Sebastijan Zindl - Blog',
-    ogDescription: "My Personal Blog",
-    ogType: 'website',
-    ogUrl: 'https://sebastijanzindl.me/blog',
-})
+import type { Post } from '~/types/content/post'
+import type { BlogPageProperties } from '~/types/pages/blogPage'
 
 const query = groq`*[_type == "post"]`
+const pageQuery = groq`*[_type == "blogPage"][0]`
 
 const { data: posts } = useSanityQuery<Post[]>(query)
+const { data: blogPage, status: pageStatus } = useSanityQuery<BlogPageProperties>(pageQuery)
+
+useServerSeoMeta({
+      title: blogPage.value?.seo.pageTitle ?? "Sebastijan Zindl | Blog",
+      description: blogPage.value?.seo.metaDescription ?? "",
+      ogTitle: blogPage.value?.seo.pageTitle ?? "Sebastijan Zindl | Blog",
+      ogType: "website",
+      ogUrl: "https://sebastijanzindl.me/blog"
+})
+
 </script>

@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
-import type { Project } from '~/types/project'
+import type { Project } from '~/types/content/project'
 import type { ProjectsPageProperties } from '~/types/pages/projectsPage'
 const pageQuery = groq`*[_type == 'projectPage'][0]`
 

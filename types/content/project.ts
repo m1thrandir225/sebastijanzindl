@@ -1,5 +1,5 @@
 import type { Technology } from './technology'
-import type { CustomImageSanity } from '~/types/custom-image'
+import type { CustomImageSanity } from '~/types/components/custom-image'
 
 export type Project = {
     _id: string

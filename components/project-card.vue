@@ -68,7 +68,7 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
-import type { Project } from '~/types/project'
+import type { Project } from '~/types/content/project'
 
 const { project } = defineProps<{
     project: Project

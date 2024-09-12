@@ -1,17 +1,20 @@
 import type { PageSEOSanity } from "../components/page-seo";
-import type { TextBlock } from "../custom-text-block";
-import type { Technology } from "../technology";
-import type { SocialLink } from "../socialLink";
+import type { TextBlock } from "../components/custom-text-block";
+import type { Technology } from "../content/technology";
+import type { SocialLink } from "../content/socialLink";
 
 export type HomePageProperties = {
   title: string;
-  pageSEO: PageSEOSanity;
+  seo: PageSEOSanity;
   shortIntroSection: {
     title: string;
     subtitle: string;
     shortIntro: TextBlock;
   };
-  socialLinks: SocialLink[];
+  socialSection: {
+    title: string,
+    socialLinks: SocialLink[];
+  }
   favouriteToolsSection: {
     title: string;
     subtitle: string;
