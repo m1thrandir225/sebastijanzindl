@@ -1,11 +1,11 @@
 <template>
-    <div class="relative flex flex-col items-start w-full h-full max-w-screen-xl gap-4 mx-auto justift-start">
+    <div v-if="pageStatus === 'success' && projectPage " class="relative flex flex-col items-start w-full h-full max-w-screen-xl gap-4 mx-auto justift-start">
         <div class="relative flex flex-col items-start w-full gap-2 p-4 text-start justift-start md:p-0">
             <h1 class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800">
-                Projects
+                {{projectPage.title}}
             </h1>
             <p class="font-sans text-lg font-medium dark:text-neutral-100 text-neutral-800">
-                Here is some of my work.
+                {{projectPage.subtitle}}
             </p>
         </div>
         <div
@@ -38,28 +38,8 @@
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
 import type { Project } from '~/types/project'
-
-useHead({
-    title: 'Sebastijan Zindl - Projects',
-    meta: [
-        {
-            hid: 'description',
-            name: 'description',
-            content: 'Sebastijan Zindl - Projects',
-        },
-    ],
-})
-
-useSeoMeta({
-    title: 'Sebastijan Zindl - Projects',
-    description: 'Sebastijan Zindl - Projects',
-    ogTitle: 'Sebastijan Zindl - Projects',
-    ogDescription: 'Sebastijan Zindl - Projects',
-    ogType: 'website',
-    ogUrl: 'https://sebastijanzindl.me/projects',
-})
-
-
+import type { ProjectsPageProperties } from '~/types/pages/projectsPage'
+const pageQuery = groq`*[_type == 'projectPage'][0]`
 
 const query = groq`*[_type == "project"] {
   ...,
@@ -71,4 +51,14 @@ const query = groq`*[_type == "project"] {
 
 
 const { data: projects, status } = useSanityQuery<Project[]>(query)
+const { data: projectPage, status: pageStatus} = useSanityQuery<ProjectsPageProperties>(pageQuery)
+
+useServerSeoMeta({
+    title: projectPage.value?.seo.pageTitle ?? "Sebastijan Zindl - Projects",
+    description: projectPage.value?.seo.metaDescription ?? "Projects",
+    ogTitle: projectPage.value?.seo.pageTitle ?? "Sebastijan Zindl - Projects",
+    ogType: "website",
+    ogUrl: 'https://sebastijanzindl.me/projects',
+})
+
 </script>

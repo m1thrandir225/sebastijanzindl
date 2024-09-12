@@ -74,7 +74,6 @@ const { project } = defineProps<{
     project: Project
 }>()
 
-console.log("Project" + project.techStack[0].title)
 
 const decorationColors = ref([
     'bg-red-400 dark:bg-red-600',
