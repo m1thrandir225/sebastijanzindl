@@ -45,7 +45,19 @@
         </div>
         <div
             v-if="post?.body"
+            v-motion
             class="text-lg text-neutral-900 dark:text-neutral-100"
+            :initial="{
+                opacity: 0,
+                y: -50,
+            }"
+            :enter="{
+                opacity: 1,
+                y: 0,
+                transition: {
+                    delay: 400,
+                },
+            }"
         >
             <SanityContent :blocks="post.body" />
         </div>
