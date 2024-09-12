@@ -1,6 +1,6 @@
 <template>
     <div
-        class="group flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] h-full transform-gpu hover:shadow-lg z-[100] ease-in-out duration-150 relative"
+        class="group flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] outline outline-2 hover:outline-neutral-200/80 dark:hover:outline-neutral-600/80 outline-neutral-200/50 dark:outline-neutral-600/50 h-full transform-gpu shadow-lg md:shadow-none hover:shadow-lg z-[100] ease-in-out duration-150 relative"
     >
         <SanityImage
             :asset-id="project.image.asset._ref"
@@ -39,8 +39,10 @@
                 </NuxtLink>
             </div>
         </div>
-        <div class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100">
-          <SanityContent  :blocks="project.description" />
+        <div
+            class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100"
+        >
+            <SanityContent :blocks="project.description" />
         </div>
         <div class="flex flex-col w-full gap-2 p-4">
             <h3
@@ -59,7 +61,7 @@
                         ]
                     "
                 >
-                    {{technology.title}}
+                    {{ technology.title }}
                 </p>
             </div>
         </div>
@@ -73,7 +75,6 @@ import type { Project } from '~/types/content/project'
 const { project } = defineProps<{
     project: Project
 }>()
-
 
 const decorationColors = ref([
     'bg-red-400 dark:bg-red-600',

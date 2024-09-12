@@ -1,7 +1,7 @@
 <template>
     <div v-motion :enter="enter" :initial="initial">
         <NuxtLink
-            active-class="underline decoration-wavy decoration-blue-400 decoration-1"
+            active-class="underline decoration-wavy decoration-blue-400 decoration-1 bg-neutral-200 dark:bg-neutral-800"
             class="px-4 py-2 font-sans font-bold transition-colors duration-200 rounded-md text-neutral-900 dark:text-neutral-100 hover:opacity-90 hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:underline hover:decoration-wavy hover:decoration-pink-400 hover:decoration-1"
             :to="props.to"
         >
