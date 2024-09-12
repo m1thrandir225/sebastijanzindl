@@ -20,15 +20,17 @@
       </p>
       <div class="my-4">
         <p
-          v-if="customPropertiesHome?.currentlyLearning"
+v-if="customPropertiesHome?.currentlyLearning"
           class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
           Currently learning:
           <span
-            v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
+v-for="learning in customPropertiesHome?.currentlyLearning" :key="learning"
             class="mr-2 underline transition-all duration-150 ease-in-out cursor-pointer decoration-wavy decoration-1 decoration-neutral-500 hover:decoration-green-400">{{
               learning }}</span>
         </p>
-        <p v-if="customPropertiesHome?.currentlyWorkingOn" class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
+        <p
+v-if="customPropertiesHome?.currentlyWorkingOn"
+          class="font-sans text-lg text-neutral-900 dark:text-neutral-100 relative z-[80]">
           Currently working on:
           <NuxtLink
 v-for="workingOn in customPropertiesHome?.currentlyWorkingOn" :key="workingOn._key"
@@ -68,10 +70,17 @@ v-for="link in customPropertiesHome?.socialLinks" :key="link._key" :to="link.url
     </div>
     <div
       class="relative z-[150] max-w-[90%] md:max-w-full flex flex-col w-full h-auto gap-4 p-8 mx-auto transition-colors duration-200 ease-in-out border-2 dark:border-neutral-800 border-neutral-200 border-opacity-50 rounded-xl xl:max-w-screen-xl dark:bg-opacity-50 backdrop-blur-3xl bg-zinc-100/20 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50">
-      <h1 class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-        Favorite tools:
-      </h1>
-      <div class="grid grid-cols-3 justify-center md:flex md:flex-row md:flex-wrap items-start gap-2 relative z-[150]">
+      <div class="flex flex-col items-start gap-2">
+        <h1 class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          Favorite tools:
+        </h1>
+        <p class="italic text-sm text-neutral-900 dark:text-neutral-100">
+          A collection of tools, languages & programs that I enjoy working
+          with
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-3 justify-center md:flex md:flex-row md:flex-wrap items-start gap-[12px] relative z-[150]">
         <VTooltip v-for="tool in customPropertiesHome?.using" :key="tool._key">
           <template #popper>
             {{ tool.name }}

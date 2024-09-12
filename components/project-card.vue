@@ -3,8 +3,8 @@
         class="group flex flex-col items-start justify-start w-full gap-4 rounded-md bg-neutral-100 dark:bg-neutral-800 max-w-[400px] max-h-[500px] h-full transform-gpu hover:shadow-lg z-[100] ease-in-out duration-150 relative"
     >
         <SanityImage
-            :asset-id="project.mainImage.asset._ref"
-            :ref_for="!!project.mainImage.asset._ref"
+            :asset-id="project.image.asset._ref"
+            :ref_for="!!project.image.asset._ref"
             auto="format"
             height="200"
             class="object-contain w-full h-auto rounded-t-lg max-h-[200px]"
@@ -30,8 +30,8 @@
                 </NuxtLink>
 
                 <NuxtLink
-                    v-if="project.liveLink"
-                    :to="project.liveLink"
+                    v-if="project.productionLink"
+                    :to="project.productionLink"
                     target="_blank"
                     class="text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300"
                 >
@@ -39,11 +39,9 @@
                 </NuxtLink>
             </div>
         </div>
-        <p
-            class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100"
-        >
-            {{ project.description }}
-        </p>
+        <div class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100">
+          <SanityContent  :blocks="project.description" />
+        </div>
         <div class="flex flex-col w-full gap-2 p-4">
             <h3
                 class="font-sans font-semibold text-neutral-900 dark:text-neutral-100"
@@ -52,8 +50,8 @@
             </h3>
             <div class="flex flex-row flex-wrap items-center gap-2">
                 <p
-                    v-for="tecnology in project.tecnologies"
-                    :key="tecnology._id"
+                    v-for="technology in project.techStack"
+                    :key="technology._id"
                     class="px-4 text-[16px] py-1 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
                     :class="
                         decorationColors[
@@ -61,7 +59,7 @@
                         ]
                     "
                 >
-                    {{ tecnology.name }}
+                    {{technology.title}}
                 </p>
             </div>
         </div>
@@ -75,6 +73,8 @@ import type { Project } from '~/types/project'
 const { project } = defineProps<{
     project: Project
 }>()
+
+console.log("Project" + project.techStack[0].title)
 
 const decorationColors = ref([
     'bg-red-400 dark:bg-red-600',

@@ -1,4 +1,5 @@
 import type { Technology } from './technology'
+import type { CustomImageSanity } from '~/types/custom-image'
 
 export type Project = {
     _id: string
@@ -9,14 +10,8 @@ export type Project = {
         current: string
     }
     description: string
-    mainImage: {
-        _type: 'image'
-        asset: {
-            _ref: string
-            _type: 'reference'
-        }
-    }
-    tecnologies: Technology[]
-    liveLink: string
+    image: CustomImageSanity,
+    techStack: Technology[]
+    productionLink: string
     githubLink: string
 }
