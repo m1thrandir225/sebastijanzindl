@@ -213,7 +213,7 @@ useServerSeoMeta({
                 <VTooltip
                     v-for="(tool, index) in homePage.favouriteToolsSection
                         .tools"
-                    :key="tool._key"
+                    :key="index"
                     v-motion
                     :initial="{
                         opacity: 0,
@@ -237,12 +237,12 @@ useServerSeoMeta({
                             v-if="isDark"
                             :image="tool.lightImage"
                             :asset-id="tool.lightImage.asset._ref"
-                            class="self-center w-10 h-10"
+                            class="self-center w-10 h-10 rounded-md"
                             :alt="tool.lightImage.alt"
                         />
                         <SanityImage
                             v-else
-                            class="self-center w-10 h-10"
+                            class="self-center w-10 h-10 rounded-md"
                             :image="tool.darkImage"
                             :asset-id="tool.darkImage.asset._ref"
                         />
