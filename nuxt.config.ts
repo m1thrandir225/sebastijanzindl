@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
 
     routeRules: {
-        '/': { prerender: true, isr: 3600 },
+        '/': { isr: 3600 },
         '/blog': { prerender: true, isr: 3600 },
         '/posts/**': { prerender: true, isr: 3600 },
         '/projects': { isr: 3600 },
