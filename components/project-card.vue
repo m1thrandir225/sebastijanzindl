@@ -40,7 +40,7 @@
             </div>
         </div>
         <div
-            class="p-4 font-sans text-[16px] text-neutral-900 dark:text-neutral-100"
+            class="p-4 font-sans overflow-y-scroll max-h-[300px] text-[16px] text-neutral-900 dark:text-neutral-100 hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 md:scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400"
         >
             <SanityContent :blocks="project.description" />
         </div>
