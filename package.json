@@ -33,7 +33,7 @@
         "@nuxtjs/sanity": "^1.8.3",
         "@portabletext/vue": "^1.0.6",
         "@vercel/analytics": "^1.1.1",
-        "@vercel/speed-insights": "^1.0.2",
+        "@vercel/speed-insights": "^1.0.12",
         "@vueuse/components": "^10.7.2",
         "@vueuse/core": "^10.7.2",
         "@vueuse/motion": "^2.0.0",
