@@ -1,5 +1,6 @@
 import type { Technology } from './technology'
 import type { CustomImageSanity } from '~/types/components/custom-image'
+import type { PortableTextBlock } from '@portabletext/types'
 
 export type Project = {
     _id: string
@@ -9,8 +10,8 @@ export type Project = {
         _type: 'slug'
         current: string
     }
-    description: string
-    image: CustomImageSanity,
+    description: PortableTextBlock[]
+    image: CustomImageSanity
     techStack: Technology[]
     productionLink: string
     githubLink: string

@@ -22,7 +22,7 @@
             <div class="flex flex-row gap-4">
                 <NuxtLink
                     v-if="project.githubLink"
-                    :to="project.githubLink"
+                    :href="project.githubLink"
                     target="_blank"
                     class="text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300"
                 >
@@ -31,7 +31,7 @@
 
                 <NuxtLink
                     v-if="project.productionLink"
-                    :to="project.productionLink"
+                    :href="project.productionLink"
                     target="_blank"
                     class="text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300"
                 >
