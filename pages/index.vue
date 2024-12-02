@@ -16,6 +16,7 @@ const pageQuery = groq`*[_type == 'homePage'][0] {
 `
 
 const isDark = useDark()
+const { isMobile } = useDevice()
 const { data: homePage, status: pageStatus } =
     useSanityQuery<HomePageProperties>(pageQuery)
 
@@ -226,6 +227,7 @@ useServerSeoMeta({
                             delay: 1400 + 75 * index,
                         },
                     }"
+                    :triggers="isMobile ? ['click'] : ['hover']"
                 >
                     <template #popper>
                         {{ tool.title }}

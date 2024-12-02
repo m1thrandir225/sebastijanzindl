@@ -20,14 +20,15 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        'floating-vue/nuxt',
-        '@nuxtjs/tailwindcss',
-        '@nuxtjs/color-mode',
-        '@nuxt/image',
-        '@vueuse/motion/nuxt',
-        '@nuxtjs/sanity',
-        '@nuxtjs/robots',
-        '@nuxt/eslint',
+      'floating-vue/nuxt',
+      '@nuxtjs/tailwindcss',
+      '@nuxtjs/color-mode',
+      '@nuxt/image',
+      '@vueuse/motion/nuxt',
+      '@nuxtjs/sanity',
+      '@nuxtjs/robots',
+      '@nuxt/eslint',
+      '@nuxtjs/device',
     ],
 
     colorMode: {

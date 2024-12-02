@@ -1,9 +1,13 @@
 <template>
     <div
         ref="magnetic"
-        :style="{
-            transform: `translate(${(spring.values as any).x}px, ${(spring.values as any).y}`,
-        }"
+        :style="
+            isMobile
+                ? {}
+                : {
+                      transform: `translate(${(spring.values as any).x}px, ${(spring.values as any).y}`,
+                  }
+        "
         @mousemove="onMouseMove"
         @mouseleave="onMouseLeave"
     >
@@ -15,6 +19,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useElementBounding } from '@vueuse/core'
 import { useSpring } from '@vueuse/motion'
+
+const { isMobile } = useDevice()
 
 const magnetic = ref<HTMLElement | null>(null)
 
