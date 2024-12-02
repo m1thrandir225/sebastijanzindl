@@ -79,7 +79,7 @@ useServerSeoMeta({
             <div
                 id="shortIntro"
                 v-motion
-                class="my-4 font-sans text-lg text-neutral-900 dark:text-neutral-100 shortIntro"
+                class="relative z-[150] my-4 font-sans text-lg text-neutral-900 dark:text-neutral-100 shortIntro"
                 :initial="{
                     opacity: 0,
                     y: -50,
