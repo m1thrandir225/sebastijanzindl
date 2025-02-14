@@ -50,11 +50,13 @@
             >
                 Technologies:
             </h3>
-            <div class="flex flex-row flex-wrap items-center gap-2">
+            <div
+                class="flex flex-row items-center w-full gap-2 py-4 overflow-x-auto hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 md:scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400"
+            >
                 <p
                     v-for="technology in project.techStack"
                     :key="technology._id"
-                    class="px-4 text-[16px] py-1 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4"
+                    class="px-4 text-[16px] py-1 flex-shrink-0 font-sans text-lg italic underline transition-all duration-150 ease-in-out rounded-full cursor-pointer text-neutral-900 dark:text-neutral-100 decoration-1 decoration-wavy hover:underline-offset-4 max-h-[50px] whitespace-nowrap"
                     :class="
                         decorationColors[
                             Math.floor(Math.random() * decorationColors.length)
