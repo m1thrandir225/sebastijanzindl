@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
     devtools: { enabled: true },
-
+    css: ['~/assets/css/tailwind.css'],
+    vite: {
+        plugins: [tailwindcss()],
+    },
     app: {
         head: {
             charset: 'utf-8',
@@ -21,7 +25,6 @@ export default defineNuxtConfig({
 
     modules: [
         'floating-vue/nuxt',
-        '@nuxtjs/tailwindcss',
         '@nuxtjs/color-mode',
         '@nuxt/image',
         '@vueuse/motion/nuxt',
@@ -30,7 +33,12 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@nuxtjs/device',
         'reka-ui/nuxt',
+        'shadcn-nuxt',
     ],
+    shadcn: {
+        prefix: '',
+        componentDir: './components/ui',
+    },
 
     colorMode: {
         classSuffix: '',
@@ -64,4 +72,3 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2024-09-05',
 })
-
