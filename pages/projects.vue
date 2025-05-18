@@ -71,9 +71,9 @@
                 v-else-if="
                     status === 'success' && projects && projects.length > 0
                 "
-                class="relative z-50 grid max-h-full py-2 md:py-4 px-8 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 md:scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400"
+                class="relative z-50 grid max-h-full py-2 md:py-4 px-8 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 md:scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400"
             >
-                <ProjectCard
+                <ProjectCardV2
                     v-for="(project, index) in projects"
                     :key="project._id"
                     v-motion
@@ -112,6 +112,7 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
+import ProjectCardV2 from '~/components/project-card-v2.vue'
 import type { Project } from '~/types/content/project'
 import type { ProjectsPageProperties } from '~/types/pages/projectsPage'
 const pageQuery = groq`*[_type == 'projectPage'][0]`

@@ -4,7 +4,6 @@
     >
         <div class="container relative mx-auto">
             <GlobalHeader />
-
             <slot />
             <GlobalFooter />
         </div>
@@ -16,5 +15,3 @@
 <script lang="ts" setup>
 import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 </script>
-
-<style></style>

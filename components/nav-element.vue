@@ -39,5 +39,3 @@ const enter = ref({
     },
 })
 </script>
-
-<style></style>

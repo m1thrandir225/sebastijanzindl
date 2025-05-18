@@ -20,15 +20,16 @@ export default defineNuxtConfig({
     },
 
     modules: [
-      'floating-vue/nuxt',
-      '@nuxtjs/tailwindcss',
-      '@nuxtjs/color-mode',
-      '@nuxt/image',
-      '@vueuse/motion/nuxt',
-      '@nuxtjs/sanity',
-      '@nuxtjs/robots',
-      '@nuxt/eslint',
-      '@nuxtjs/device',
+        'floating-vue/nuxt',
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/color-mode',
+        '@nuxt/image',
+        '@vueuse/motion/nuxt',
+        '@nuxtjs/sanity',
+        '@nuxtjs/robots',
+        '@nuxt/eslint',
+        '@nuxtjs/device',
+        'reka-ui/nuxt',
     ],
 
     colorMode: {
@@ -63,3 +64,4 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2024-09-05',
 })
+
