@@ -8,7 +8,7 @@ export type HomeShortIntroSection = {
     title: string
     subtitle: string
     shortIntro: TextBlock
-    avatar: CustomImageSanity
+    imageShowcase: CustomImageSanity[]
 }
 
 export type HomeSocialSection = {

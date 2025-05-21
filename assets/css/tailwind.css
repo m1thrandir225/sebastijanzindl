@@ -1,7 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@fontsource/titan-one';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
     --color-background: var(--background);
@@ -119,5 +120,71 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+@theme {
+    --font-titan: 'Titan One', 'system-ui';
+}
+
+@media only screen and (min-width: 768px) {
+    .animate-zoom-left {
+        animation: subtleZoomLeft 7s infinite;
+    }
+
+    .animate-zoom-right {
+        animation: subtleZoomRight 8s ease-in-out infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-3000 {
+        animation-delay: 3s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+
+    .animation-delay-5000 {
+        animation-delay: 5s;
+    }
+
+    @keyframes subtleZoomLeft {
+        0% {
+            transform: translateY(0px) scale(1);
+        }
+
+        33% {
+            transform: translateY(50px) scale(1.1);
+        }
+
+        66% {
+            transform: translateY(124px) scale(0.95);
+        }
+
+        100% {
+            transform: translateY(0px) scale(1);
+        }
+    }
+
+    @keyframes subtleZoomRight {
+        0% {
+            transform: translateY(0px) scale(1);
+        }
+
+        33% {
+            transform: translateY(-90px) scale(1.2);
+        }
+
+        66% {
+            transform: translateY(-136px) scale(0.95);
+        }
+
+        100% {
+            transform: translateY(0px) scale(1);
+        }
     }
 }

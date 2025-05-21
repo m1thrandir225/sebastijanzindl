@@ -28,6 +28,8 @@
         "vue-router": "^4.5.1"
     },
     "dependencies": {
+        "@fontsource/titan-one": "^5.2.5",
+        "@lottiefiles/dotlottie-vue": "^0.6.3",
         "@nuxt/image": "^1.10.0",
         "@nuxtjs/robots": "^3.0.0",
         "@nuxtjs/sanity": "^1.13.3",
@@ -40,6 +42,8 @@
         "@vueuse/motion": "^2.2.6",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "embla-carousel-autoplay": "^8.6.0",
+        "embla-carousel-vue": "^8.6.0",
         "floating-vue": "^5.2.2",
         "lucide-vue-next": "^0.299.0",
         "reka-ui": "^2.2.1",
