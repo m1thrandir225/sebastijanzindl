@@ -24,7 +24,7 @@ const { isMobile } = useDevice()
                     delay: 1000,
                 },
             }"
-            class="font-sans text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+            class="font-titan text-2xl font-bold text-neutral-900 dark:text-neutral-100"
         >
             {{ section.title }}
         </h1>
@@ -41,13 +41,13 @@ const { isMobile } = useDevice()
                     delay: 1200,
                 },
             }"
-            class="italic text-sm text-neutral-900 dark:text-neutral-100"
+            class="italic font-array text-sm text-neutral-900 dark:text-neutral-100"
         >
             {{ section.subtitle }}
         </p>
     </div>
     <div
-        class="grid grid-cols-3 justify-center md:flex md:flex-row md:flex-wrap items-start gap-[12px] relative z-[150]"
+        class="grid grid-cols-3 justify-start md:flex md:flex-row md:flex-wrap items-start gap-[12px] relative z-[150]"
     >
         <VTooltip
             v-for="(tool, index) in section.tools"
@@ -67,7 +67,7 @@ const { isMobile } = useDevice()
             :triggers="isMobile ? ['click'] : ['hover']"
         >
             <template #popper>
-                {{ tool.title }}
+                <span class="font-array">{{ tool.title }}</span>
             </template>
             <div
                 class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center"

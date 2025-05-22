@@ -1,24 +1,16 @@
 <template>
     <div v-motion :enter="enter" :initial="initial">
         <NuxtLink
-            active-class="underline decoration-wavy decoration-blue-400 decoration-1 bg-neutral-200 dark:bg-neutral-800"
-            class="px-4 py-2 font-sans font-bold transition-colors duration-200 rounded-md text-neutral-900 dark:text-neutral-100 hover:opacity-90 hover:bg-neutral-200 dark:hover:bg-neutral-800 group"
+            active-class="underline decoration-wavy decoration-pink-400 decoration-1 bg-neutral-200 dark:bg-neutral-800"
+            class="p-2 sm:px-4 sm:py-2 md:px-6 md:py-3 font-bold transition-colors duration-200 rounded-md text-neutral-900 dark:text-neutral-100 hover:opacity-90 hover:bg-neutral-200 dark:hover:bg-neutral-800 font-array"
             :to="props.to"
         >
-            <MagneticLink>
-                <p
-                    class="font-sans text-bold group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400 group-hover:decoration-1"
-                >
-                    {{ props.text }}
-                </p>
-            </MagneticLink>
+            {{ props.text }}
         </NuxtLink>
     </div>
 </template>
 
 <script lang="ts" setup>
-import MagneticLink from './magnetic-link.vue'
-
 const props = defineProps<{
     to: string
     text: string

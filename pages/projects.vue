@@ -19,7 +19,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
+                class="font-titan text-3xl font-bold dark:text-neutral-100 text-neutral-800"
             >
                 {{ projectPage.title }}
             </h1>
@@ -36,7 +36,7 @@
                         delay: 200,
                     },
                 }"
-                class="font-sans text-sm italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
+                class="font-array text-sm italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
             >
                 {{ projectPage.subtitle }}
             </p>
@@ -71,24 +71,14 @@
                 v-else-if="
                     status === 'success' && projects && projects.length > 0
                 "
-                class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 sm:px-0"
+                class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 no-scrollbar"
             >
                 <ProjectCardV2
                     v-for="(project, index) in projects"
                     :key="project._id"
                     v-motion
                     :project="project"
-                    :initial="{
-                        opacity: 0,
-                        scale: 0,
-                    }"
-                    :enter="{
-                        opacity: 100,
-                        scale: 1,
-                        transition: {
-                            delay: 400 + 75 * index,
-                        },
-                    }"
+                    :index="index"
                 />
             </div>
             <div

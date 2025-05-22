@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+
+@import './array.css';
 @import '@fontsource/titan-one';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -123,8 +125,19 @@
     }
 }
 
+@layer utilities {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+}
+
 @theme {
     --font-titan: 'Titan One', 'system-ui';
+    --font-array: 'Array';
 }
 
 @media only screen and (min-width: 768px) {
