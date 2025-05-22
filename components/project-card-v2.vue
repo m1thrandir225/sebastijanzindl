@@ -16,7 +16,7 @@
             class="w-full flex flex-row items-center justify-between p-6 dark:outline-neutral-700 rounded-xl group hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all ease-in-out duration-300 cursor-pointer"
         >
             <h1
-                class="font-array font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#fbbf23] transition-all ease-in-out duration-300 group-hover:dark:text-[#fbbf23] group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
+                class="font-array text-left font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#fbbf23] transition-all ease-in-out duration-300 group-hover:dark:text-[#fbbf23] group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
             >
                 {{ project.title }}
             </h1>
