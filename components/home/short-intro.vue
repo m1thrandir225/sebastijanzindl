@@ -62,7 +62,7 @@ const hoverAvatarLeave = () => {
                             delay: 200,
                         },
                     }"
-                    class="italic font-arra text-md text-neutral-900 dark:text-neutral-100"
+                    class="italic font-array text-md text-neutral-900 dark:text-neutral-100"
                 >
                     {{ introSection.subtitle }}
                 </p>
