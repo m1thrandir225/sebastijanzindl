@@ -1,0 +1,88 @@
+/**
+* @license
+*
+* Font Family: Array
+* Designed by: Frode Helland
+* URL: https://www.fontshare.com/fonts/array
+* © 2025 Indian Type Foundry
+*
+* Array Wide 
+* Array Regular 
+* Array Semibold 
+* Array SemiboldWide 
+* Array Bold 
+* Array BoldWide 
+
+*
+*/
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-Regular.woff2') format('woff2'),
+        url('../fonts/Array-Regular.woff') format('woff'),
+        url('../fonts/Array-Regular.ttf') format('truetype');
+    font-weight: 400; /* Corresponds to 'Regular' */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: normal; /* Default width */
+}
+
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-Wide.woff2') format('woff2'),
+        url('../fonts/Array-Wide.woff') format('woff'),
+        url('../fonts/Array-Wide.ttf') format('truetype');
+    font-weight: 400; /* Corresponds to 'Regular' weight for the Wide version */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: expanded; /* Or 'semi-expanded', 'extra-expanded', 'ultra-expanded' depending on the actual width. 'expanded' is a common value for "wide". */
+}
+
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-Semibold.woff2') format('woff2'),
+        url('../fonts/Array-Semibold.woff') format('woff'),
+        url('../fonts/Array-Semibold.ttf') format('truetype');
+    font-weight: 600; /* Corresponds to 'Semibold' */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-SemiboldWide.woff2') format('woff2'),
+        url('../fonts/Array-SemiboldWide.woff') format('woff'),
+        url('../fonts/Array-SemiboldWide.ttf') format('truetype');
+    font-weight: 600; /* Corresponds to 'Semibold' weight for the Wide version */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: expanded;
+}
+
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-Bold.woff2') format('woff2'),
+        url('../fonts/Array-Bold.woff') format('woff'),
+        url('../fonts/Array-Bold.ttf') format('truetype');
+    font-weight: 700; /* Corresponds to 'Bold' */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Array';
+    src:
+        url('../fonts/Array-BoldWide.woff2') format('woff2'),
+        url('../fonts/Array-BoldWide.woff') format('woff'),
+        url('../fonts/Array-BoldWide.ttf') format('truetype');
+    font-weight: 700; /* Corresponds to 'Bold' weight for the Wide version */
+    font-display: swap;
+    font-style: normal;
+    font-stretch: expanded;
+}

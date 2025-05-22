@@ -19,7 +19,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
+                class="font-titan text-3xl font-bold dark:text-neutral-100 text-neutral-800"
             >
                 {{ projectPage.title }}
             </h1>
@@ -36,13 +36,13 @@
                         delay: 200,
                     },
                 }"
-                class="font-sans text-sm italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
+                class="font-array text-sm italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
             >
                 {{ projectPage.subtitle }}
             </p>
         </div>
         <div
-            class="relative-z-50 flex flex-col max-h-full md:max-h-[600px] justify-center w-auto h-full px-0 py-8 md:p-8 mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl bg-neutral-100 dark:bg-neutral-900 md:bg-neutral-200 md:dark:bg-neutral-800"
+            class="relative-z-50 flex flex-col max-h-full md:max-h-[600px] justify-center w-full h-full mx-auto transition-colors duration-200 ease-in-out lg:rounded-lg bg-opacity-80 dark:bg-opacity-50 backdrop-blur-3xl"
         >
             <div v-if="status === 'pending'" class="self-center">
                 <LucideIcon
@@ -71,24 +71,14 @@
                 v-else-if="
                     status === 'success' && projects && projects.length > 0
                 "
-                class="relative z-50 grid max-h-full py-2 md:py-4 px-8 md:px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] hover:scrollbar-thumb-neutral-900 active:scrollbar-thumb-neutral-900 md:scrollbar scrollbar-track-transparent dark:scrollbar-thumb-neutral-100 dark:active:scrollbar-thumb-neutral-100 dark:scrollbar scrollbar-thumb-yellow-400"
+                class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 no-scrollbar"
             >
-                <ProjectCard
+                <ProjectCardV2
                     v-for="(project, index) in projects"
                     :key="project._id"
                     v-motion
                     :project="project"
-                    :initial="{
-                        opacity: 0,
-                        scale: 0,
-                    }"
-                    :enter="{
-                        opacity: 100,
-                        scale: 1,
-                        transition: {
-                            delay: 400 + 75 * index,
-                        },
-                    }"
+                    :index="index"
                 />
             </div>
             <div
@@ -112,6 +102,7 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
+import ProjectCardV2 from '~/components/project-card-v2.vue'
 import type { Project } from '~/types/content/project'
 import type { ProjectsPageProperties } from '~/types/pages/projectsPage'
 const pageQuery = groq`*[_type == 'projectPage'][0]`

@@ -58,7 +58,6 @@
                             damping: 25,
                             mass: 0.5,
                         },
-                        s,
                     }"
                     :enter="{
                         opacity: 1,

@@ -17,7 +17,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-sans text-3xl font-bold dark:text-neutral-100 text-neutral-800"
+                class="font-titan text-3xl font-bold dark:text-neutral-100 text-neutral-800"
             >
                 {{ blogPage.title }}
             </h1>
@@ -34,7 +34,7 @@
                         delay: 200,
                     },
                 }"
-                class="font-sans italic text-sm md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
+                class="font-array italic text-sm md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
             >
                 {{ blogPage.subtitle }}
             </p>

@@ -10,6 +10,7 @@ export type Project = {
         _type: 'slug'
         current: string
     }
+    shortDescription: string
     description: PortableTextBlock[]
     image: CustomImageSanity
     techStack: Technology[]

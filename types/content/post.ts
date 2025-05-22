@@ -1,8 +1,5 @@
-import {
-    type PortableTextBlock,
-    type Slug,
-    type ImageAsset,
-} from '@sanity/types'
+import { type Slug, type ImageAsset } from '@sanity/types'
+import type { PortableTextBlock } from '@portabletext/types'
 
 export interface Post {
     publishedAt: string
