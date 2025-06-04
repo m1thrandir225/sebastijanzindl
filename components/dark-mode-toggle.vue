@@ -3,7 +3,11 @@
         class="group flex items-center justify-center p-2 transition-colors duration-200 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
     >
         <UseDark v-slot="{ isDark, toggleDark }">
-            <button name="dark-mode-toggle" @click="toggleDark()">
+            <button
+                name="dark-mode-toggle"
+                aria-label="Dark Mode Toggle Button"
+                @click="toggleDark()"
+            >
                 <LucideIcon
                     v-if="!isDark"
                     v-motion
