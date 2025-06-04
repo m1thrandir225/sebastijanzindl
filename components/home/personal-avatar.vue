@@ -36,7 +36,7 @@ defineProps<{
         >
             <CarouselContent class="w-80 h-80">
                 <CarouselItem
-                    v-for="item in images"
+                    v-for="(item, index) in images"
                     :key="item.asset._ref"
                     class="basis-full rounded-xl object-cover"
                 >
@@ -44,9 +44,10 @@ defineProps<{
                         class="w-full h-full rounded-xl object-cover border-4 dark:border-neutral-800 border-neutral-200 border-opacity-50 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50 transition-all ease-in-out duration-300"
                         :image="item"
                         auto="format"
-                        :q="75"
+                        q="100"
                         w="320"
                         h="320"
+                        :alt="`carousel-item-${index}`"
                         :asset-id="item.asset._ref"
                         @mouseenter="onHover"
                         @mouseleave="onHoverLeave"

@@ -19,7 +19,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-titan text-2xl text-neutral-900 dark:text-neutral-100 transition-all ease-in-out duration-300 group-hover:text-[#fbbf23] font-bold"
+                class="font-titan text-2xl text-neutral-900 dark:text-neutral-100 transition-all ease-in-out duration-300 group-hover:text-[#fbbf23]"
             >
                 {{ post?.title }}
             </h1>

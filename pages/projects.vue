@@ -19,7 +19,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-titan text-3xl font-bold dark:text-neutral-100 text-neutral-800"
+                class="font-titan text-3xl dark:text-neutral-100 text-neutral-800"
             >
                 {{ projectPage.title }}
             </h1>

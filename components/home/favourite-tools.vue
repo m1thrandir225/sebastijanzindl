@@ -24,7 +24,7 @@ const { isMobile } = useDevice()
                     delay: 1000,
                 },
             }"
-            class="font-titan text-2xl font-bold text-neutral-900 dark:text-neutral-100"
+            class="font-titan text-2xl text-neutral-900 dark:text-neutral-100"
         >
             {{ section.title }}
         </h1>
@@ -80,7 +80,7 @@ const { isMobile } = useDevice()
                     w="40"
                     h="40"
                     class="self-center w-10 h-10 rounded-md"
-                    :alt="tool.lightImage.alt"
+                    :alt="tool.hoverText"
                 />
                 <SanityImage
                     v-else
@@ -90,6 +90,7 @@ const { isMobile } = useDevice()
                     class="self-center w-10 h-10 rounded-md"
                     :image="tool.darkImage"
                     :asset-id="tool.darkImage.asset._ref"
+                    :alt="tool.hoverText"
                 />
             </div>
         </VTooltip>

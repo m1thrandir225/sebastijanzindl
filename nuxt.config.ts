@@ -8,6 +8,15 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'en',
+            },
+            meta: [
+                {
+                    name: 'description',
+                    content: "Sebastijan's personal portfolio site. ",
+                },
+            ],
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
             bodyAttrs: {

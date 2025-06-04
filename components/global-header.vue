@@ -2,7 +2,7 @@
     <div
         class="flex flex-row items-center justify-between w-full px-4 py-8 mx-auto lg:max-w-screen-xl"
     >
-        <NuxtLink to="/">
+        <NuxtLink to="/" aria-label="Clickable logo to go to the homepage">
             <GlobalLogo :width="64" :height="64" />
         </NuxtLink>
         <div class="flex flex-row items-center justify-between gap-2 xs:gap-4">
