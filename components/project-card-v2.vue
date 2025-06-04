@@ -217,6 +217,8 @@
                                 auto="format"
                                 :image="item.lightImage"
                                 :asset-id="item.lightImage.asset._ref"
+                                w="32"
+                                h="32"
                                 class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
                                 :alt="item.lightImage.alt"
                             />
@@ -224,6 +226,8 @@
                                 v-else
                                 class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
                                 auto="format"
+                                w="32"
+                                h="32"
                                 :image="item.darkImage"
                                 :asset-id="item.darkImage.asset._ref"
                             />

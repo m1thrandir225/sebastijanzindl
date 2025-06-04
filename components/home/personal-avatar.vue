@@ -45,6 +45,8 @@ defineProps<{
                         :image="item"
                         auto="format"
                         :q="75"
+                        w="320"
+                        h="320"
                         :asset-id="item.asset._ref"
                         @mouseenter="onHover"
                         @mouseleave="onHoverLeave"

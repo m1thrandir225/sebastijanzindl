@@ -77,11 +77,15 @@ const { isMobile } = useDevice()
                     :image="tool.lightImage"
                     :asset-id="tool.lightImage.asset._ref"
                     auto="format"
+                    w="40"
+                    h="40"
                     class="self-center w-10 h-10 rounded-md"
                     :alt="tool.lightImage.alt"
                 />
                 <SanityImage
                     v-else
+                    w="40"
+                    h="40"
                     auto="format"
                     class="self-center w-10 h-10 rounded-md"
                     :image="tool.darkImage"

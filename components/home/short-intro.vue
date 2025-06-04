@@ -44,7 +44,7 @@ const hoverAvatarLeave = () => {
                     },
                 }"
                 :class="{ '!text-amber-400 tracking-wide': avatarIsHovered }"
-                class="font-titan text-3xl font-bold transition-all ease-in-out duration-300 text-neutral-900 dark:text-neutral-100"
+                class="font-titan relative z-[150] text-3xl font-bold transition-all ease-in-out duration-300 text-neutral-900 dark:text-neutral-100"
             >
                 {{ introSection.title }}
             </h1>
