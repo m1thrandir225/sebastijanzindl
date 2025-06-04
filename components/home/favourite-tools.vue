@@ -76,11 +76,13 @@ const { isMobile } = useDevice()
                     v-if="isDark"
                     :image="tool.lightImage"
                     :asset-id="tool.lightImage.asset._ref"
+                    auto="format"
                     class="self-center w-10 h-10 rounded-md"
                     :alt="tool.lightImage.alt"
                 />
                 <SanityImage
                     v-else
+                    auto="format"
                     class="self-center w-10 h-10 rounded-md"
                     :image="tool.darkImage"
                     :asset-id="tool.darkImage.asset._ref"

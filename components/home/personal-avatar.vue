@@ -43,6 +43,8 @@ defineProps<{
                     <SanityImage
                         class="w-full h-full rounded-xl object-cover border-4 dark:border-neutral-800 border-neutral-200 border-opacity-50 lg:hover:border-neutral-300 lg:dark:hover:border-neutral-700 dark:bg-neutral-800/50 transition-all ease-in-out duration-300"
                         :image="item"
+                        auto="format"
+                        :q="75"
                         :asset-id="item.asset._ref"
                         @mouseenter="onHover"
                         @mouseleave="onHoverLeave"

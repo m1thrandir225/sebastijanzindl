@@ -44,6 +44,7 @@
                 }"
                 :image="project.image"
                 :asset-id="project.image.asset._ref"
+                auto="format"
                 class="rounded-t-lg"
             />
             <DialogHeader
@@ -213,6 +214,7 @@
                         >
                             <SanityImage
                                 v-if="isDark"
+                                auto="format"
                                 :image="item.lightImage"
                                 :asset-id="item.lightImage.asset._ref"
                                 class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
@@ -221,6 +223,7 @@
                             <SanityImage
                                 v-else
                                 class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
+                                auto="format"
                                 :image="item.darkImage"
                                 :asset-id="item.darkImage.asset._ref"
                             />
