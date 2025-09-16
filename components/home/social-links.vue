@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-    <div class="my-4">
+    <div class="my-4 z-[150]">
         <p
             v-motion
             :initial="{
@@ -43,7 +43,7 @@ defineProps<{
                     },
                 }"
                 target="_blank"
-                class="flex flex-row items-center gap-2 group text-neutral-900 dark:text-neutral-100"
+                class="flex flex-row items-center gap-2 group z-[150] text-neutral-900 dark:text-neutral-100"
             >
                 <LucideIcon
                     :name="link.lucideIcon"
