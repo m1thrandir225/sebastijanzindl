@@ -76,6 +76,9 @@ export default defineNuxtConfig({
                     },
                 },
             },
+            posthogPublicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY,
+            posthogHost: 'https://eu.i.posthog.com',
+            posthogDefaults: '2025-05-24',
         },
     },
 

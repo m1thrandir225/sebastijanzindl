@@ -7,7 +7,6 @@
             <slot />
             <GlobalFooter />
         </div>
-
         <SpeedInsights />
     </div>
 </template>

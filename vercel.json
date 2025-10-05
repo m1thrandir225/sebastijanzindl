@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/relay-65VX/static/(.*)",
+            "destination": "https://eu-assets.i.posthog.com/static/$1"
+        },
+        {
+            "source": "/relay-65VX/(.*)",
+            "destination": "https://eu.i.posthog.com/$1"
+        }
+    ]
+}
