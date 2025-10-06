@@ -12,12 +12,10 @@ defineProps<{
 const avatarIsHovered = ref<boolean>(false)
 
 const hoverAvatar = () => {
-    console.log('hello')
     avatarIsHovered.value = true
 }
 
 const hoverAvatarLeave = () => {
-    console.log('helloo')
     avatarIsHovered.value = false
 }
 </script>

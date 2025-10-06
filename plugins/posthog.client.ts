@@ -12,7 +12,18 @@ export default defineNuxtPlugin(() => {
         loaded: (posthog) => {
             if (import.meta.env.MODE === 'development') posthog.debug()
         },
-        cookieless_mode: 'always', //use non-cookie mode for GDPR compliance
+        cookieless_mode: 'always', //use non-cookie mode for GDPR compliance,
+        capture_pageview: false, //custom page-view capturing
+    })
+
+    const router = useRouter()
+
+    router.afterEach((to) => {
+        nextTick(() => {
+            posthog.capture('$pageview', {
+                current_url: to.fullPath,
+            })
+        })
     })
 
     return {
