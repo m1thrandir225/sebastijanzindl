@@ -7,10 +7,7 @@
             <slot />
             <GlobalFooter />
         </div>
-        <SpeedInsights />
     </div>
 </template>
 
-<script lang="ts" setup>
-import { SpeedInsights } from '@vercel/speed-insights/nuxt'
-</script>
+<script lang="ts" setup></script>
