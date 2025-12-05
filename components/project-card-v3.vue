@@ -18,11 +18,18 @@
         }"
         class="w-full flex flex-row items-center justify-between p-6 dark:outline-neutral-700 rounded-xl group hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all ease-in-out duration-300 cursor-pointer"
     >
-        <h1
-            class="font-array text-left font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#fbbf23] transition-all ease-in-out duration-300 group-hover:dark:text-[#fbbf23] group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
-        >
-            {{ project.title }}
-        </h1>
+        <div class="flex flex-col gap-2">
+            <h1
+                class="font-array text-left font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#fbbf23] transition-all ease-in-out duration-300 group-hover:dark:text-[#fbbf23] group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
+            >
+                {{ project.title }}
+            </h1>
+            <p
+                class="font-array text-[14px] overflow-hidden opacity-0 translate-y-[-10px] max-h-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:max-h-40"
+            >
+                {{ project.shortDescription }}
+            </p>
+        </div>
         <LucideIcon
             name="ArrowRight"
             class="rotate-180 group-hover:rotate-0 transition-all ease-in-out duration-300 group-hover:text-[#fbbf23] group-hover:scale-125"
