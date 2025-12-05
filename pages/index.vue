@@ -16,30 +16,11 @@ const { data: homePage, status: pageStatus } =
     useSanityQuery<HomePageProperties>(pageQuery)
 
 const pageTitle = computed(() => {
-    const title = homePage.value?.seo.pageTitle ?? 'Sebastijan Zindl'
-    return isActive.value ? title : "👀 I'm still here"
+    return homePage.value?.seo.pageTitle ?? 'Sebastijan Zindl'
 })
 
 const pageDescription = computed(() => {
     return homePage.value?.seo.metaDescription ?? ''
-})
-
-const isActive = ref(true)
-
-function handleVisibilityChange() {
-    if (document.hidden) {
-        isActive.value = false
-    } else {
-        isActive.value = true
-    }
-}
-
-onMounted(() => {
-    document.addEventListener('visibilitychange', handleVisibilityChange)
-})
-
-onUnmounted(() => {
-    document.removeEventListener('visibilitychange', handleVisibilityChange)
 })
 
 useSeoMeta({
