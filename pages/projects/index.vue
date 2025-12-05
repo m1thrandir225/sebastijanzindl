@@ -73,7 +73,7 @@
                 "
                 class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 no-scrollbar"
             >
-                <ProjectCardV2
+                <ProjectCardV3
                     v-for="(project, index) in projects"
                     :key="project._id"
                     v-motion
@@ -102,7 +102,7 @@
 
 <script lang="ts" setup>
 import LucideIcon from '~/components/lucide-icon.vue'
-import ProjectCardV2 from '~/components/project-card-v2.vue'
+import ProjectCardV3 from '~/components/project-card-v3.vue'
 import type { Project } from '~/types/content/project'
 import type { ProjectsPageProperties } from '~/types/pages/projectsPage'
 const pageQuery = groq`*[_type == 'projectPage'][0]`
