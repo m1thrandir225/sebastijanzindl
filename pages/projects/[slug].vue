@@ -226,5 +226,20 @@ function goBack() {
     router.back()
 }
 
+const pageTitle = computed(() => {
+    const paramsTitle = `${route.params.slug} - Sebastijan Zindl`
+    return project.value?.title
+        ? `${project.value.title} - Sebastijan Zindl`
+        : paramsTitle
+})
+
+const pageDescription = computed(() => {
+    return project.value?.shortDescription ?? ''
+})
+
 const { isMobile } = useDevice()
+useSeoMeta({
+    title: pageTitle,
+    description: pageDescription,
+})
 </script>

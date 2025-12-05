@@ -74,10 +74,18 @@ const { data: posts } = useSanityQuery<Post[]>(query)
 const { data: blogPage, status: pageStatus } =
     useSanityQuery<BlogPageProperties>(pageQuery)
 
-useServerSeoMeta({
-    title: blogPage.value?.seo.pageTitle ?? 'Sebastijan Zindl | Blog',
-    description: blogPage.value?.seo.metaDescription ?? '',
-    ogTitle: blogPage.value?.seo.pageTitle ?? 'Sebastijan Zindl | Blog',
+const pageTitle = computed(() => {
+    return blogPage.value?.seo.pageTitle ?? 'Blog - Sebastijan Zindl'
+})
+
+const pageDescription = computed(() => {
+    return blogPage.value?.seo.metaDescription ?? ''
+})
+
+useSeoMeta({
+    title: pageTitle,
+    description: pageDescription,
+    ogTitle: pageDescription,
     ogType: 'website',
     ogUrl: 'https://sebastijanzindl.me/blog',
 })

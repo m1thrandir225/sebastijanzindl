@@ -15,13 +15,40 @@ const pageQuery = groq`*[_type == 'homePage'][0] {
 const { data: homePage, status: pageStatus } =
     useSanityQuery<HomePageProperties>(pageQuery)
 
-useServerSeoMeta({
-    title: homePage.value?.seo.pageTitle ?? 'Sebastijan Zindl',
-    ogTitle: homePage.value?.seo.pageTitle ?? 'Sebastijan Zindl',
-    description: homePage.value?.seo.metaDescription ?? '',
+const pageTitle = computed(() => {
+    const title = homePage.value?.seo.pageTitle ?? 'Sebastijan Zindl'
+    return isActive.value ? title : "👀 I'm still here"
+})
+
+const pageDescription = computed(() => {
+    return homePage.value?.seo.metaDescription ?? ''
+})
+
+const isActive = ref(true)
+
+function handleVisibilityChange() {
+    if (document.hidden) {
+        isActive.value = false
+    } else {
+        isActive.value = true
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+})
+
+onUnmounted(() => {
+    document.removeEventListener('visibilitychange', handleVisibilityChange)
+})
+
+useSeoMeta({
+    title: pageTitle,
+    ogTitle: pageTitle,
+    description: pageDescription,
     ogType: 'website',
     ogUrl: 'https://sebastijanzindl.me',
-    ogDescription: homePage.value?.seo.metaDescription ?? '',
+    ogDescription: pageDescription,
 })
 </script>
 

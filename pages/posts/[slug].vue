@@ -81,4 +81,12 @@ const {
 } = useSanityQuery<Post>(query, {
     slug: route.params.slug,
 })
+
+const pageTitle = computed(() => {
+    return `${post.value?.title} - Sebastijan Zindl`
+})
+
+useSeoMeta({
+    title: pageTitle,
+})
 </script>

@@ -119,10 +119,18 @@ const { data: projects, status } = useSanityQuery<Project[]>(query)
 const { data: projectPage, status: pageStatus } =
     useSanityQuery<ProjectsPageProperties>(pageQuery)
 
-useServerSeoMeta({
-    title: projectPage.value?.seo.pageTitle ?? 'Sebastijan Zindl - Projects',
-    description: projectPage.value?.seo.metaDescription ?? 'Projects',
-    ogTitle: projectPage.value?.seo.pageTitle ?? 'Sebastijan Zindl - Projects',
+const pageTitle = computed(() => {
+    return projectPage.value?.seo.pageTitle ?? 'Sebastijan Zindl - Projects'
+})
+
+const pageDescription = computed(() => {
+    return projectPage.value?.seo.metaDescription ?? 'Projects'
+})
+
+useSeoMeta({
+    title: pageTitle,
+    description: pageDescription,
+    ogTitle: pageTitle,
     ogType: 'website',
     ogUrl: 'https://sebastijanzindl.me/projects',
 })
