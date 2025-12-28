@@ -1,3 +1,52 @@
+<script setup lang="ts">
+    import { useDark } from '@vueuse/core'
+    import { useRoute } from 'vue-router'
+    
+    import LucideIcon from '@/components/lucide-icon.vue'
+    import type { Project } from '~/types/content/project'
+    
+    const route = useRoute()
+    
+    const query = groq`*[_type == "project" && slug.current == $slug][0] {
+      ...,
+      techStack[] -> {
+        ...,
+      }
+    }`
+    
+    const {
+        data: project,
+        status,
+        error,
+    } = useSanityQuery<Project>(query, {
+        slug: route.params.slug,
+    })
+    
+    const isDark = useDark()
+    
+    const router = useRouter()
+    
+    function goBack() {
+        router.back()
+    }
+    
+    const pageTitle = computed(() => {
+        const paramsTitle = `${route.params.slug} - Sebastijan Zindl`
+        return project.value?.title
+            ? `${project.value.title} - Sebastijan Zindl`
+            : paramsTitle
+    })
+    
+    const pageDescription = computed(() => {
+        return project.value?.shortDescription ?? ''
+    })
+    
+    useSeoMeta({
+        title: pageTitle,
+        description: pageDescription,
+    })
+</script>
+
 <template>
     <div
         v-if="status !== 'pending' && project"
@@ -29,7 +78,7 @@
                             delay: 0,
                         },
                     }"
-                    class="font-titan text-3xl dark:text-neutral-100 text-neutral-800"
+                    class="font-array font-bold text-3xl dark:text-neutral-100 text-neutral-800"
                 >
                     {{ project.title }}
                 </h1>
@@ -134,14 +183,14 @@
                         delay: 350,
                     },
                 }"
-                class="font-array text-[18px] lg:text-[24px] italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
+                class="font-array text-[18px] italic md:text-lg font-medium dark:text-neutral-100 text-neutral-800"
             >
                 Built with:
             </p>
             <div
                 class="w-full grid grid-cols-4 md:flex flex-row items-center flex-wrap gap-2 md:gap-8"
             >
-                <VTooltip
+                <div
                     v-for="(item, indexP) in project.techStack"
                     :key="indexP"
                     v-motion
@@ -156,36 +205,34 @@
                             delay: 400 + 75 * indexP,
                         },
                     }"
-                    :triggers="isMobile ? ['click'] : ['hover']"
+                    class="relative z-[150] px-4 py-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-col items-center justify-center group"
                 >
-                    <template #popper>
-                        <span class="font-array">{{ item.hoverText }}</span>
-                    </template>
-                    <div
-                        class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center"
+                    <SanityImage
+                        v-if="isDark"
+                        auto="format"
+                        :image="item.lightImage"
+                        :asset-id="item.lightImage.asset._ref"
+                        w="32"
+                        h="32"
+                        class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
+                        :alt="item.lightImage.alt"
+                    />
+                    <SanityImage
+                        v-else
+                        class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
+                        auto="format"
+                        w="32"
+                        h="32"
+                        :image="item.darkImage"
+                        :asset-id="item.darkImage.asset._ref"
+                        :alt="item.darkImage.alt"
+                    />
+                    <p
+                        class="font-array dark:text-neutral-100 text-neutral-900 dark:group-hover:text-[#fbbf23]"
                     >
-                        <SanityImage
-                            v-if="isDark"
-                            auto="format"
-                            :image="item.lightImage"
-                            :asset-id="item.lightImage.asset._ref"
-                            w="32"
-                            h="32"
-                            class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
-                            :alt="item.lightImage.alt"
-                        />
-                        <SanityImage
-                            v-else
-                            class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
-                            auto="format"
-                            w="32"
-                            h="32"
-                            :image="item.darkImage"
-                            :asset-id="item.darkImage.asset._ref"
-                            :alt="item.darkImage.alt"
-                        />
-                    </div>
-                </VTooltip>
+                        {{ item.title }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -194,52 +241,4 @@
     <div v-else>Something went wrong</div>
 </template>
 
-<script setup lang="ts">
-import { useDark } from '@vueuse/core'
-import { useRoute } from 'vue-router'
 
-import LucideIcon from '@/components/lucide-icon.vue'
-import type { Project } from '~/types/content/project'
-
-const route = useRoute()
-
-const query = groq`*[_type == "project" && slug.current == $slug][0] {
-  ...,
-  techStack[] -> {
-    ...,
-  }
-}`
-
-const {
-    data: project,
-    status,
-    error,
-} = useSanityQuery<Project>(query, {
-    slug: route.params.slug,
-})
-
-const isDark = useDark()
-
-const router = useRouter()
-
-function goBack() {
-    router.back()
-}
-
-const pageTitle = computed(() => {
-    const paramsTitle = `${route.params.slug} - Sebastijan Zindl`
-    return project.value?.title
-        ? `${project.value.title} - Sebastijan Zindl`
-        : paramsTitle
-})
-
-const pageDescription = computed(() => {
-    return project.value?.shortDescription ?? ''
-})
-
-const { isMobile } = useDevice()
-useSeoMeta({
-    title: pageTitle,
-    description: pageDescription,
-})
-</script>

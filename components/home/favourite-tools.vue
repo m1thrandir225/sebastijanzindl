@@ -6,7 +6,6 @@ defineProps<{
 }>()
 
 const isDark = useDark()
-const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -24,7 +23,7 @@ const { isMobile } = useDevice()
                     delay: 1000,
                 },
             }"
-            class="font-titan text-2xl text-neutral-900 dark:text-neutral-100"
+            class="font-array font-bold text-2xl text-neutral-900 dark:text-neutral-100"
         >
             {{ section.title }}
         </h1>
@@ -49,7 +48,7 @@ const { isMobile } = useDevice()
     <div
         class="grid grid-cols-3 justify-start md:flex md:flex-row md:flex-wrap items-start gap-[12px] relative z-[150]"
     >
-        <VTooltip
+        <div
             v-for="(tool, index) in section.tools"
             :key="index"
             v-motion
@@ -64,35 +63,33 @@ const { isMobile } = useDevice()
                     delay: 1400 + 75 * index,
                 },
             }"
-            :triggers="isMobile ? ['click'] : ['hover']"
+            class="flex flex-col gap-2 items-center justify-center relative z-[150] px-4 py-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 group"
         >
-            <template #popper>
-                <span class="font-array">{{ tool.title }}</span>
-            </template>
-            <div
-                class="relative z-[150] p-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-row items-center justify-center"
+            <SanityImage
+                v-if="isDark"
+                :image="tool.lightImage"
+                :asset-id="tool.lightImage.asset._ref"
+                auto="format"
+                w="40"
+                h="40"
+                class="self-center w-10 h-10 rounded-md"
+                :alt="tool.hoverText"
+            />
+            <SanityImage
+                v-else
+                w="40"
+                h="40"
+                auto="format"
+                class="self-center w-10 h-10 rounded-md"
+                :image="tool.darkImage"
+                :asset-id="tool.darkImage.asset._ref"
+                :alt="tool.hoverText"
+            />
+            <p
+                class="font-array dark:text-neutral-100 text-neutral-900 dark:group-hover:text-[#fbbf23]"
             >
-                <SanityImage
-                    v-if="isDark"
-                    :image="tool.lightImage"
-                    :asset-id="tool.lightImage.asset._ref"
-                    auto="format"
-                    w="40"
-                    h="40"
-                    class="self-center w-10 h-10 rounded-md"
-                    :alt="tool.hoverText"
-                />
-                <SanityImage
-                    v-else
-                    w="40"
-                    h="40"
-                    auto="format"
-                    class="self-center w-10 h-10 rounded-md"
-                    :image="tool.darkImage"
-                    :asset-id="tool.darkImage.asset._ref"
-                    :alt="tool.hoverText"
-                />
-            </div>
-        </VTooltip>
+                {{ tool.title }}
+            </p>
+        </div>
     </div>
 </template>

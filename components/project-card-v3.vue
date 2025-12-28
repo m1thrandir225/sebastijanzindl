@@ -24,9 +24,7 @@
             >
                 {{ project.title }}
             </h1>
-            <p
-                class="font-array text-[14px] overflow-hidden opacity-0 translate-y-[-10px] max-h-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:max-h-40"
-            >
+            <p class="font-array text-[14px] opacity-85">
                 {{ project.shortDescription }}
             </p>
         </div>

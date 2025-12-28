@@ -17,7 +17,7 @@
                         delay: 0,
                     },
                 }"
-                class="font-titan text-3xl dark:text-neutral-100 text-neutral-800"
+                class="font-array font-semibold text-3xl dark:text-neutral-100 text-neutral-800"
             >
                 {{ blogPage.title }}
             </h1>

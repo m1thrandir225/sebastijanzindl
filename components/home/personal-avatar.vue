@@ -34,7 +34,7 @@ defineProps<{
             :opts="{ align: 'center' }"
             :plugins="[Autoplay({ delay: 10000 })]"
         >
-            <CarouselContent class="w-80 h-80">
+            <CarouselContent class="w-full h-full">
                 <CarouselItem
                     v-for="(item, index) in images"
                     :key="item.asset._ref"
@@ -45,8 +45,8 @@ defineProps<{
                         :image="item"
                         auto="format"
                         q="100"
-                        w="320"
-                        h="320"
+                        w="640"
+                        h="640"
                         :alt="`carousel-item-${index}`"
                         :asset-id="item.asset._ref"
                         @mouseenter="onHover"

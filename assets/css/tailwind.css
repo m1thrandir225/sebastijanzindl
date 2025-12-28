@@ -4,6 +4,10 @@
 @import './array.css';
 @import '@fontsource/titan-one';
 
+@plugin 'tailwind-scrollbar' {
+    nocompatible: true;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {

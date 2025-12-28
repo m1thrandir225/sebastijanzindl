@@ -22,7 +22,7 @@ const hoverAvatarLeave = () => {
 
 <template>
     <div
-        class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 w-full h-full gap-6 py-4 lg:gap-0"
+        class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 w-full h-full gap-6 py-4 lg:gap-6"
     >
         <div
             v-motion-slide-visible-top
@@ -42,7 +42,7 @@ const hoverAvatarLeave = () => {
                     },
                 }"
                 :class="{ '!text-amber-400 tracking-wide': avatarIsHovered }"
-                class="font-titan relative z-[150] text-3xl transition-all ease-in-out duration-300 text-neutral-900 dark:text-neutral-100"
+                class="font-array font-bold relative z-[150] text-3xl transition-all ease-in-out duration-300 text-neutral-900 dark:text-neutral-100"
             >
                 {{ introSection.title }}
             </h1>
