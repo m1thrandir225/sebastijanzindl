@@ -36,6 +36,6 @@ const isDark = useDark()
     transition: all ease-in-out 0.1s;
 }
 #logo:hover > path {
-    fill: #fbbf23;
+    fill: var(--brand);
 }
 </style>

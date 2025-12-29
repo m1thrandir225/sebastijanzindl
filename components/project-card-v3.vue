@@ -20,17 +20,17 @@
     >
         <div class="flex flex-col gap-2">
             <h1
-                class="font-array text-left font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#fbbf23] transition-all ease-in-out duration-300 group-hover:dark:text-[#fbbf23] group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
+                class="font-array text-left font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-brand transition-all ease-in-out duration-300 group-hover:dark:text-brand group-hover:underline group-hover:decoration-wavy group-hover:decoration-pink-400"
             >
                 {{ project.title }}
             </h1>
-            <p class="font-array text-[14px] opacity-85">
+            <p class="font-medium italic text-[14px] opacity-85">
                 {{ project.shortDescription }}
             </p>
         </div>
         <LucideIcon
             name="ArrowRight"
-            class="rotate-180 group-hover:rotate-0 transition-all ease-in-out duration-300 group-hover:text-[#fbbf23] group-hover:scale-125"
+            class="rotate-180 group-hover:rotate-0 transition-all ease-in-out duration-300 group-hover:text-brand group-hover:scale-125"
             :size="24"
         />
     </NuxtLink>

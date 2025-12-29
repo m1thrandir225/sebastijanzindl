@@ -7,10 +7,13 @@
             <slot />
             <GlobalFooter />
         </div>
+        <Toaster />
     </div>
 </template>
 
 <script lang="ts" setup>
+import 'vue-sonner/style.css'
+import { Toaster } from '@/components/ui/sonner'
 const INACTIVE_TITLE = '👀 Hey! Comeback please.'
 const isInactive = ref(false)
 const originalTitle = ref<string>('')

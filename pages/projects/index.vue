@@ -71,7 +71,7 @@
                 v-else-if="
                     status === 'success' && projects && projects.length > 0
                 "
-                class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 lg:px-0 transition-height ease-in-out duration-200 scrollbar-thin scrollbar-track-rounded-full sm:overflow-y-scroll scrollbar-track-neutral-200 dark:scrollbar-track-neutral-600 scrollbar-thumb-[#fbbf23]"
+                class="relative z-50 flex flex-col py-2 md:py-4 md:grid-cols-2 lg:grid-cols-1 items-start justify-start h-full gap-4 md:overflow-y-auto md:max-h-[95%] px-4 lg:px-0 transition-height ease-in-out duration-200 scrollbar-thin scrollbar-track-rounded-full sm:overflow-y-scroll scrollbar-track-neutral-200 dark:scrollbar-track-neutral-600 scrollbar-thumb-brand"
             >
                 <div class="pr-2 w-full">
                     <ProjectCardV3

@@ -41,13 +41,13 @@ const hoverAvatarLeave = () => {
                         delay: 0,
                     },
                 }"
-                :class="{ '!text-amber-400 tracking-wide': avatarIsHovered }"
+                :class="{ '!text-brand tracking-wide': avatarIsHovered }"
                 class="font-array font-bold relative z-[150] text-3xl transition-all ease-in-out duration-300 text-neutral-900 dark:text-neutral-100"
             >
                 {{ introSection.title }}
             </h1>
             <div class="my-4">
-                <p
+                <h3
                     v-motion
                     :initial="{
                         opacity: 0,
@@ -60,15 +60,15 @@ const hoverAvatarLeave = () => {
                             delay: 200,
                         },
                     }"
-                    class="italic font-array text-md text-neutral-900 dark:text-neutral-100"
+                    class="italic font-semibold text-md text-neutral-900 dark:text-neutral-100"
                 >
                     {{ introSection.subtitle }}
-                </p>
+                </h3>
             </div>
             <div
                 id="shortIntro"
                 v-motion
-                class="relative z-[150] my-4 font-sans text-lg text-neutral-900 dark:text-neutral-100 shortIntro"
+                class="relative z-[150] my-4 text-lg text-neutral-900 dark:text-neutral-100 shortIntro"
                 :initial="{
                     opacity: 0,
                     y: -50,

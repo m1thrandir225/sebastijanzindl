@@ -29,7 +29,6 @@
         "vue-router": "^4.5.1"
     },
     "dependencies": {
-        "@fontsource/titan-one": "^5.2.5",
         "@lottiefiles/dotlottie-vue": "^0.6.3",
         "@nuxt/image": "^1.10.0",
         "@nuxtjs/robots": "^3.0.0",
@@ -49,7 +48,8 @@
         "reka-ui": "^2.2.1",
         "tailwind-merge": "^3.3.0",
         "tailwindcss": "^4.1.7",
-        "tw-animate-css": "^1.3.0"
+        "tw-animate-css": "^1.3.0",
+        "vue-sonner": "^2.0.9"
     },
     "engines": {
         "node": "v22.14.0"

@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="(pageStatus == 'success' || pageStatus == 'idle') && blogPage"
-        class="flex flex-col items-start justify-start w-full h-full max-w-screen-xl gap-2 mx-auto"
+        class="flex flex-col items-start justify-start w-full h-full gap-2 mx-auto"
     >
         <div class="flex flex-col items-start justify-start gap-2 p-4 md:p-0">
             <h1

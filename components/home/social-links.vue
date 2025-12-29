@@ -25,7 +25,9 @@ defineProps<{
         >
             {{ section.title }}
         </p>
-        <div class="flex flex-col flex-wrap w-full gap-2 my-2 lg:flex-row">
+        <div
+            class="flex flex-col flex-wrap w-full gap-2 my-2 lg:flex-row font-array font-bold"
+        >
             <NuxtLink
                 v-for="(link, index) in section?.socialLinks"
                 :key="link._key"

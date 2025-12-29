@@ -1,56 +1,56 @@
 <script setup lang="ts">
-    import { useDark } from '@vueuse/core'
-    import { useRoute } from 'vue-router'
-    
-    import LucideIcon from '@/components/lucide-icon.vue'
-    import type { Project } from '~/types/content/project'
-    
-    const route = useRoute()
-    
-    const query = groq`*[_type == "project" && slug.current == $slug][0] {
+import { useDark } from '@vueuse/core'
+import { useRoute } from 'vue-router'
+
+import LucideIcon from '@/components/lucide-icon.vue'
+import type { Project } from '~/types/content/project'
+
+const route = useRoute()
+
+const query = groq`*[_type == "project" && slug.current == $slug][0] {
       ...,
       techStack[] -> {
         ...,
       }
     }`
-    
-    const {
-        data: project,
-        status,
-        error,
-    } = useSanityQuery<Project>(query, {
-        slug: route.params.slug,
-    })
-    
-    const isDark = useDark()
-    
-    const router = useRouter()
-    
-    function goBack() {
-        router.back()
-    }
-    
-    const pageTitle = computed(() => {
-        const paramsTitle = `${route.params.slug} - Sebastijan Zindl`
-        return project.value?.title
-            ? `${project.value.title} - Sebastijan Zindl`
-            : paramsTitle
-    })
-    
-    const pageDescription = computed(() => {
-        return project.value?.shortDescription ?? ''
-    })
-    
-    useSeoMeta({
-        title: pageTitle,
-        description: pageDescription,
-    })
+
+const {
+    data: project,
+    status,
+    error,
+} = useSanityQuery<Project>(query, {
+    slug: route.params.slug,
+})
+
+const isDark = useDark()
+
+const router = useRouter()
+
+function goBack() {
+    router.back()
+}
+
+const pageTitle = computed(() => {
+    const paramsTitle = `${route.params.slug} - Sebastijan Zindl`
+    return project.value?.title
+        ? `${project.value.title} - Sebastijan Zindl`
+        : paramsTitle
+})
+
+const pageDescription = computed(() => {
+    return project.value?.shortDescription ?? ''
+})
+
+useSeoMeta({
+    title: pageTitle,
+    description: pageDescription,
+})
 </script>
 
 <template>
     <div
         v-if="status !== 'pending' && project"
-        class="relative flex flex-col items-start w-full h-full px-4 md:px-8 lg:max-w-screen-xl gap-4 mx-auto justift-start"
+        class="relative flex flex-col items-start w-full h-full px-4 md:px-0 gap-4 mx-auto justift-start"
     >
         <div class="w-full flex flex-row items-center justify-between">
             <div class="flex flex-row gap-4 items-center">
@@ -60,7 +60,7 @@
                 >
                     <LucideIcon
                         name="ArrowLeft"
-                        class="transition-all text-neutral-100 dark:text-neutral-800 ease-in-out duration-300 group-hover:text-[#fbbf23] group-hover:scale-125"
+                        class="transition-all text-neutral-100 dark:text-neutral-800 ease-in-out duration-300 group-hover:text-brand group-hover:scale-125"
                         :size="18"
                     />
                 </button>
@@ -101,7 +101,7 @@
                     }"
                     :href="project.githubLink"
                     target="_blank"
-                    class="text-neutral-900 dark:text-neutral-100 hover:text-[#fbbf23] transition-all ease-in-out duration-300"
+                    class="text-neutral-900 dark:text-neutral-100 hover:text-brand transition-all ease-in-out duration-300"
                 >
                     <LucideIcon name="Github" :size="24" />
                 </NuxtLink>
@@ -122,7 +122,7 @@
                         },
                     }"
                     target="_blank"
-                    class="text-neutral-900 dark:text-neutral-100 hover:text-[#fbbf23] transition-all ease-in-out duration-300"
+                    class="text-neutral-900 dark:text-neutral-100 hover:text-brand transition-all ease-in-out duration-300"
                 >
                     <LucideIcon name="Link" :size="24" />
                 </NuxtLink>
@@ -144,7 +144,7 @@
             :image="project.image"
             :asset-id="project.image.asset._ref"
             auto="format"
-            class="rounded-xl transition-all ease-in duration-200 border-2 border-transparent hover:border-neutral-800/50 hover:dark:border-neutral-100/50"
+            class="rounded-xl transition-all ease-in duration-200 border-2 border-transparent hover:border-brand"
         />
         <div
             v-motion
@@ -228,7 +228,7 @@
                         :alt="item.darkImage.alt"
                     />
                     <p
-                        class="font-array dark:text-neutral-100 text-neutral-900 dark:group-hover:text-[#fbbf23]"
+                        class="font-array dark:text-neutral-100 text-neutral-900 dark:group-hover:text-brand"
                     >
                         {{ item.title }}
                     </p>
@@ -240,5 +240,3 @@
     <div v-else-if="status === 'error'">{{ error }}</div>
     <div v-else>Something went wrong</div>
 </template>
-
-

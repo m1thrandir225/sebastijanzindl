@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 
 @import './array.css';
-@import '@fontsource/titan-one';
+@import './hind.css';
 
 @plugin 'tailwind-scrollbar' {
     nocompatible: true;
@@ -47,6 +47,7 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+    --color-brand: var(--brand);
 }
 
 :root {
@@ -83,6 +84,7 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --brand: #235ffb;
 }
 
 .dark {
@@ -118,6 +120,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
+    --brand: oklch(0.8368 0.1647 84.49);
 }
 
 @layer base {
@@ -125,7 +128,7 @@
         @apply border-border outline-ring/50;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-hind;
     }
 }
 
@@ -140,8 +143,9 @@
 }
 
 @theme {
-    --font-titan: 'Titan One', 'system-ui';
     --font-array: 'Array';
+    --font-khand: 'Khand-Variable';
+    --font-hind: 'Hind-Variable';
 }
 
 @media only screen and (min-width: 768px) {
