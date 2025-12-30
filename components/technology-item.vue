@@ -3,7 +3,7 @@ import type { Technology } from '~/types/content/technology'
 import { useDark, useClipboard } from '@vueuse/core'
 import { toast } from 'vue-sonner'
 
-defineProps<{
+const props = defineProps<{
     tool: Technology
     index: number
 }>()
@@ -19,20 +19,32 @@ const copyToClipboard = (text: string) => {
     copy(text)
     toast('Copied to clipboard')
 }
+
+const page = useRoute().name
+
+const pageDelay = computed(() => {
+    if (page === 'projects-slug') {
+        return 200 + 75 * props.index
+    } else {
+        return 1400 + 75 * props.index
+    }
+})
 </script>
 
 <template>
     <div
         v-motion
         :initial="{
-            opacity: 0,
-            scale: 0,
+            opacity: 0.5,
+            scale: 0.5,
+            filter: 'blur(8px)',
         }"
         :enter="{
             opacity: 100,
             scale: 1,
+            filter: 'blur(0px)',
             transition: {
-                delay: 1400 + 75 * index,
+                delay: pageDelay,
             },
         }"
         class="flex flex-col gap-2 items-center justify-center relative z-[150] px-4 py-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 group hover:cursor-copy"

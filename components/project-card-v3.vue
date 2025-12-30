@@ -11,29 +11,28 @@ const { isMobile } = useDevice()
 </script>
 
 <template>
-    <NuxtLink
-    :key="props.project._id" 
-    v-motion
-    :to="{
+    <NuxtLink :key="props.project._id" v-motion :to="{
         name: 'projects-slug',
         params: { slug: props.project.slug.current },
     }" :initial="{
-            opacity: 0,
-            scale: 0.95,
-        }" :visible-once="{
-            opacity: 1,
-            scale: 1,
-            transition: {
-                delay: (() => {
-                    if(isMobile) {
-                         return index < 4 ? 100 + 75 * index : 0
-                    } else {
-                        return index < 6 ? 100 + 75 * index : 0
-                    }
-                })(),
-                duration: 300,
-            },
-        }"
+        opacity: 0,
+        scale: 0.95,
+        filter: 'blur(8px)',
+    }" :visible-once="{
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        transition: {
+            delay: (() => {
+                if (isMobile) {
+                    return index < 4 ? 100 + 75 * index : 0
+                } else {
+                    return index < 6 ? 100 + 75 * index : 0
+                }
+            })(),
+            duration: 300,
+        },
+    }"
         class="w-full flex flex-row items-center justify-between p-6 dark:outline-neutral-700 rounded-xl group hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all ease-in-out duration-300 cursor-pointer">
         <div class="flex flex-col gap-2">
             <h1

@@ -1,11 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
+    modules: [
+        'floating-vue/nuxt',
+        '@nuxtjs/color-mode',
+        '@nuxt/image',
+        '@vueuse/motion/nuxt',
+        '@nuxtjs/sanity',
+        '@nuxtjs/robots',
+        '@nuxt/eslint',
+        '@nuxtjs/device',
+        'reka-ui/nuxt',
+        'shadcn-nuxt',
+    ],
     devtools: { enabled: true },
-    css: ['~/assets/css/tailwind.css'],
-    vite: {
-        plugins: [tailwindcss()],
-    },
     app: {
         head: {
             htmlAttrs: {
@@ -24,39 +33,11 @@ export default defineNuxtConfig({
             },
         },
     },
-
-    routeRules: {
-        '/': { isr: 3600 },
-        '/blog': { prerender: true, isr: 3600 },
-        '/posts/**': { prerender: true, isr: 3600 },
-        '/projects': { isr: 3600 },
-        '/projects/[slug]': { isr: 3600 },
-    },
-
-    modules: [
-        'floating-vue/nuxt',
-        '@nuxtjs/color-mode',
-        '@nuxt/image',
-        '@vueuse/motion/nuxt',
-        '@nuxtjs/sanity',
-        '@nuxtjs/robots',
-        '@nuxt/eslint',
-        '@nuxtjs/device',
-        'reka-ui/nuxt',
-        'shadcn-nuxt',
-    ],
-    shadcn: {
-        prefix: '',
-        componentDir: './components/ui',
-    },
+    css: ['~/assets/css/tailwind.css'],
 
     colorMode: {
         classSuffix: '',
         preference: 'dark',
-    },
-
-    sanity: {
-        projectId: 'ptgttce5',
     },
 
     runtimeConfig: {
@@ -83,5 +64,24 @@ export default defineNuxtConfig({
         },
     },
 
+    routeRules: {
+        '/': { isr: 3600 },
+        '/blog': { prerender: true, isr: 3600 },
+        '/posts/**': { prerender: true, isr: 3600 },
+        '/projects': { isr: 3600 },
+        '/projects/[slug]': { isr: 3600 },
+    },
+
     compatibilityDate: '2024-09-05',
+    vite: {
+        plugins: [tailwindcss()],
+    },
+
+    sanity: {
+        projectId: 'ptgttce5',
+    },
+    shadcn: {
+        prefix: '',
+        componentDir: './components/ui',
+    },
 })
