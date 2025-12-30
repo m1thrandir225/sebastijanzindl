@@ -17,7 +17,7 @@ defineProps<{
 <template>
     <div
         v-motion
-        class="col-span-1 flex items-center justify-center z-10 w-full h-full"
+        class="col-span-1 flex items-center justify-center z-10 md:px-0 w-auto h-full"
         :initial="{
             opacity: 0,
             y: -50,
@@ -34,7 +34,7 @@ defineProps<{
             :opts="{ align: 'center' }"
             :plugins="[Autoplay({ delay: 10000 })]"
         >
-            <CarouselContent class="w-full h-full">
+            <CarouselContent class="w-80 h-80 md:w-full md:h-full">
                 <CarouselItem
                     v-for="(item, index) in images"
                     :key="item.asset._ref"

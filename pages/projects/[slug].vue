@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useDark } from '@vueuse/core'
 import { useRoute } from 'vue-router'
 
 import LucideIcon from '@/components/lucide-icon.vue'
 import type { Project } from '~/types/content/project'
+import TechnologyItem from '~/components/technology-item.vue'
 
 const route = useRoute()
 
@@ -21,8 +21,6 @@ const {
 } = useSanityQuery<Project>(query, {
     slug: route.params.slug,
 })
-
-const isDark = useDark()
 
 const router = useRouter()
 
@@ -144,7 +142,7 @@ useSeoMeta({
             :image="project.image"
             :asset-id="project.image.asset._ref"
             auto="format"
-            class="rounded-xl transition-all ease-in duration-200 border-2 border-transparent hover:border-brand"
+            class="rounded-xl transition-all ease-in duration-200 border-2 border-transparent hover:border-brand md:h-[380px] w-full object-cover min-h-[200px]"
         />
         <div
             v-motion
@@ -188,51 +186,14 @@ useSeoMeta({
                 Built with:
             </p>
             <div
-                class="w-full grid grid-cols-4 md:flex flex-row items-center flex-wrap gap-2 md:gap-8"
+                class="w-full grid grid-cols-3 md:flex flex-row items-center flex-wrap gap-2 md:gap-8"
             >
-                <div
+                <template
                     v-for="(item, indexP) in project.techStack"
                     :key="indexP"
-                    v-motion
-                    :initial="{
-                        opacity: 0,
-                        scale: 0,
-                    }"
-                    :enter="{
-                        opacity: 100,
-                        scale: 1,
-                        transition: {
-                            delay: 400 + 75 * indexP,
-                        },
-                    }"
-                    class="relative z-[150] px-4 py-2 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-lg hover:dark:bg-neutral-100/20 hover:dark:border-neutral-200/50 hover:border-neutral-800/50 hover:bg-neutral-600/20 flex flex-col items-center justify-center group"
                 >
-                    <SanityImage
-                        v-if="isDark"
-                        auto="format"
-                        :image="item.lightImage"
-                        :asset-id="item.lightImage.asset._ref"
-                        w="32"
-                        h="32"
-                        class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
-                        :alt="item.lightImage.alt"
-                    />
-                    <SanityImage
-                        v-else
-                        class="self-center w-8 h-8 md:w-10 md:h-10 rounded-md"
-                        auto="format"
-                        w="32"
-                        h="32"
-                        :image="item.darkImage"
-                        :asset-id="item.darkImage.asset._ref"
-                        :alt="item.darkImage.alt"
-                    />
-                    <p
-                        class="font-array dark:text-neutral-100 text-neutral-900 dark:group-hover:text-brand"
-                    >
-                        {{ item.title }}
-                    </p>
-                </div>
+                    <TechnologyItem :tool="item" :index="indexP" />
+                </template>
             </div>
         </div>
     </div>

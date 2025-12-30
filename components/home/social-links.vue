@@ -21,12 +21,12 @@ defineProps<{
                     delay: 600,
                 },
             }"
-            class="font-sans text-lg text-neutral-900 dark:text-neutral-100"
+            class="font-bold italic text-lg text-neutral-900 dark:text-neutral-100"
         >
             {{ section.title }}
         </p>
         <div
-            class="flex flex-col flex-wrap w-full gap-2 my-2 lg:flex-row font-array font-bold"
+            class="flex flex-col flex-wrap w-full gap-4 md:gap-2 my-2 lg:flex-row font-array font-bold"
         >
             <NuxtLink
                 v-for="(link, index) in section?.socialLinks"
