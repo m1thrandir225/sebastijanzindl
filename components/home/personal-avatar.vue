@@ -17,7 +17,7 @@ defineProps<{
 <template>
     <div
         v-motion
-        class="col-span-1 flex items-center justify-center z-10 md:px-0 w-auto h-full"
+        class="col-span-1 md:flex items-center justify-center z-10 md:px-0 w-auto h-full hidden"
         :initial="{
             opacity: 0,
             y: -50,
@@ -55,5 +55,31 @@ defineProps<{
                 </CarouselItem>
             </CarouselContent>
         </Carousel>
+    </div>
+    <div class="flex flex-col gap-4 w-full max-w-[90%] mx-auto md:hidden">
+        <SanityImage
+            v-for="(item, index) in images"
+            :key="item.asset._ref"
+            v-motion
+            :initial="{
+                opacity: 0.5,
+                scale: 0.5,
+                filter: 'blur(8px)',
+            }"
+            :visible-once="{
+                opacity: 1,
+                scale: 1,
+                filter: 'blur(0px)',
+                transition: {
+                    duration: 300,
+                },
+            }"
+            :image="item"
+            :asset-id="item.asset._ref"
+            :alt="`images-item-${index}`"
+            auto="format"
+            class="w-full h-full rounded-xl border-2 border-neutral-200 dark:border-neutral-600"
+            :class="index % 2 == 0 ? '' : 'rotate-[-8deg]'"
+        />
     </div>
 </template>

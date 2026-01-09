@@ -1,5 +1,5 @@
 <template>
-    <div
+    <nav
         class="flex flex-row items-center justify-between w-full px-4 py-8 mx-auto lg:px-0"
     >
         <NuxtLink to="/" aria-label="Clickable logo to go to the homepage">
@@ -11,7 +11,7 @@
             </nav>
             <DarkModeToggle />
         </div>
-    </div>
+    </nav>
 </template>
 
 <script lang="ts" setup>
