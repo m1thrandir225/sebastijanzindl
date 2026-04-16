@@ -15,6 +15,11 @@ export default defineNuxtConfig({
         'shadcn-nuxt',
     ],
     devtools: { enabled: true },
+    image: {
+        sanity: {
+            projectId: 'ptgttce5',
+        },
+    },
     app: {
         head: {
             htmlAttrs: {
@@ -74,6 +79,13 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2024-09-05',
     vite: {
+        optimizeDeps: {
+            include: [
+                "@vue/devtools-kit",
+                "@vue/devtools-core",
+                "posthog-js",
+            ]
+        },
         plugins: [tailwindcss()],
     },
 
