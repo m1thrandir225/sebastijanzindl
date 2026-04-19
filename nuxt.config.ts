@@ -2,6 +2,14 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
+    components: {
+        dirs: [
+            {
+                path: '~/components',
+                ignore: ['ui/**'],
+            },
+        ],
+    },
     modules: [
         'floating-vue/nuxt',
         '@nuxtjs/color-mode',
@@ -13,8 +21,26 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         'reka-ui/nuxt',
         'shadcn-nuxt',
+        // Must run after shadcn-nuxt: patch its `components/ui` dir so Nuxt does not
+        // file-scan it (empty `extensions: []` becomes `**/*.*` and duplicates addComponent).
+        function (_options, nuxt) {
+            nuxt.hook('components:dirs', (dirs) => {
+                for (const dir of dirs) {
+                    if (typeof dir !== 'object' || !dir.path) continue
+                    const normalized = dir.path.replace(/\\/g, '/')
+                    if (normalized.endsWith('/components/ui')) {
+                        dir.ignore = [...(dir.ignore ?? []), '**/*']
+                    }
+                }
+            })
+        },
     ],
     devtools: { enabled: true },
+    image: {
+        sanity: {
+            projectId: 'ptgttce5',
+        },
+    },
     app: {
         head: {
             htmlAttrs: {
@@ -74,6 +100,13 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2024-09-05',
     vite: {
+        optimizeDeps: {
+            include: [
+                "@vue/devtools-kit",
+                "@vue/devtools-core",
+                "posthog-js",
+            ]
+        },
         plugins: [tailwindcss()],
     },
 
